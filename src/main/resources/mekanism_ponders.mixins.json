@@ -2,7 +2,9 @@
   "required": true,
   "package": "io.github.alyx.mekponder.mixin",
   "compatibilityLevel": "JAVA_21",
-  "mixins": [],
+  "mixins": [
+    "AccessorAttributeStateActive"
+  ],
   "injectors": {
     "defaultRequire": 1
   },
