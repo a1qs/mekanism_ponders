@@ -91,15 +91,15 @@ configurations {
 dependencies {
     implementation("curse.maven:jei-238222:7057366")
     implementation("net.createmod.ponder:Ponder-NeoForge-${minecraft_version}:${ponder_version}");
+    implementation("mekanism:Mekanism:${mekanism_version}")            // Mekanism
+    implementation("mekanism:Mekanism:${mekanism_version}:additions")  // Mekanism: Additions
+    implementation("mekanism:Mekanism:${mekanism_version}:generators") // Mekanism: Generators
+    implementation("mekanism:Mekanism:${mekanism_version}:tools")      // Mekanism: Tools
 
     compileOnly("mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}")
     compileOnly "mekanism:Mekanism:${mekanism_version}:api"
 
     runtimeOnly("mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}")
-    runtimeOnly("mekanism:Mekanism:${mekanism_version}")            // Mekanism
-    runtimeOnly("mekanism:Mekanism:${mekanism_version}:additions")  // Mekanism: Additions
-    runtimeOnly("mekanism:Mekanism:${mekanism_version}:generators") // Mekanism: Generators
-    runtimeOnly("mekanism:Mekanism:${mekanism_version}:tools")      // Mekanism: Tools
 }
 
 var generateModMetadata = tasks.register("generateModMetadata", ProcessResources) {
