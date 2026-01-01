@@ -1,0 +1,13 @@
+{
+  "itemGroup.mekanism_ponders": "Example Mod Tab",
+  "block.mekanism_ponders.example_block": "Example Block",
+  "item.mekanism_ponders.example_item": "Example Item",
+
+  "mekanism_ponders.configuration.title": "Mekanism: Ponders Configs",
+  "mekanism_ponders.configuration.section.mekanism_ponders.common.toml": "Mekanism: Ponders Configs",
+  "mekanism_ponders.configuration.section.mekanism_ponders.common.toml.title": "Mekanism: Ponders Configs",
+  "mekanism_ponders.configuration.items": "Item List",
+  "mekanism_ponders.configuration.logDirtBlock": "Log Dirt Block",
+  "mekanism_ponders.configuration.magicNumberIntroduction": "Magic Number Text",
+  "mekanism_ponders.configuration.magicNumber": "Magic Number"
+}
