@@ -3,7 +3,8 @@
   "package": "io.github.alyx.mekponder.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "AccessorAttributeStateActive"
+    "AccessorAttributeStateActive",
+    "InvokerMekanismTileEntityRenderer"
   ],
   "injectors": {
     "defaultRequire": 1
