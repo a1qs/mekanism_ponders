@@ -4,7 +4,8 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "AccessorAttributeStateActive",
-    "InvokerMekanismTileEntityRenderer"
+    "InvokerMekanismTileEntityRenderer",
+    "MixinRenderFusionReactor"
   ],
   "injectors": {
     "defaultRequire": 1
