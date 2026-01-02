@@ -1,7 +1,5 @@
 package io.github.alyx.mekponder.util;
 
-import io.github.alyx.mekponder.mixin.AccessorAttributeStateActive;
-import mekanism.common.block.attribute.Attributes;
 import net.createmod.ponder.api.scene.EffectInstructions;
 import net.createmod.ponder.api.scene.PositionUtil;
 import net.createmod.ponder.api.scene.SceneBuilder;
@@ -21,6 +19,7 @@ public class SceneUtil {
      * @param particlesPerSide  The amount of particles it should display per block per side
      */
     public static void multiBlockFormParticles(SceneBuilder scene, SceneBuildingUtil util, BlockPos corner1, BlockPos corner2, int particlesPerSide) {
+        // why do i need to use MutableBlockPos to specify double coords
         corner1 = new BlockPos.MutableBlockPos(corner1.getX() - 0.5, corner1.getY() - 0.5, corner1.getZ() - 0.5);
         corner2 = new BlockPos.MutableBlockPos(corner2.getX() + 0.5, corner2.getY() + 0.5, corner2.getZ() + 0.5);
 
@@ -56,7 +55,6 @@ public class SceneUtil {
         for (int i = side1.getX(); i <= side2.getX(); i++) {
             for (int j = side1.getY(); j <= side2.getY(); j++) {
                 for (int k = side1.getZ(); k <= side2.getZ(); k++) {
-
                     effects.createRedstoneParticles(posUtil.at(i, j, k), 0xFF1100, particleAmount);
                 }
             }
