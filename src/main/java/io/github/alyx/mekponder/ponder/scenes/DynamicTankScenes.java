@@ -10,7 +10,6 @@ import net.createmod.ponder.api.scene.SceneBuildingUtil;
 import net.minecraft.core.Direction;
 import net.minecraft.world.phys.AABB;
 
-// TODO: fix transmitters somehow
 public class DynamicTankScenes {
 
 
