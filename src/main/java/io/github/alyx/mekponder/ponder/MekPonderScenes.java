@@ -4,6 +4,7 @@ package io.github.alyx.mekponder.ponder;
 import io.github.alyx.mekponder.MekanismPonders;
 import io.github.alyx.mekponder.ponder.scenes.DynamicTankScenes;
 import io.github.alyx.mekponder.ponder.scenes.FusionReactorScenes;
+import io.github.alyx.mekponder.ponder.scenes.InductionMatrixScenes;
 import mekanism.common.registries.MekanismBlocks;
 import mekanism.generators.common.registries.GeneratorsBlocks;
 import net.createmod.ponder.api.registration.PonderSceneRegistrationHelper;
@@ -18,6 +19,7 @@ public class MekPonderScenes {
     public static final ResourceLocation FUELING_FUSION_REACTOR = MekanismPonders.id("fueling_fusion_reactor");
 
     public static final ResourceLocation CREATING_DYNAMIC_TANK = MekanismPonders.id("creating_dynamic_tank");
+    public static final ResourceLocation CREATING_INDUCTION_MATRIX = MekanismPonders.id("creating_induction_matrix");
 
     public static void register(PonderSceneRegistrationHelper<ResourceLocation> helper) {
         PonderSceneRegistrationHelper<Item> HELPER = helper.withKeyFunction(BuiltInRegistries.ITEM::getKey);
@@ -38,8 +40,12 @@ public class MekPonderScenes {
         HELPER.forComponents(
                 MekanismBlocks.DYNAMIC_TANK.asItem(),
                 MekanismBlocks.DYNAMIC_VALVE.asItem()
-                )
-                .addStoryBoard(CREATING_DYNAMIC_TANK, DynamicTankScenes::creatingDynamicTank);
+        ).addStoryBoard(CREATING_DYNAMIC_TANK, DynamicTankScenes::creatingDynamicTank);
 
+        HELPER.forComponents(
+                MekanismBlocks.INDUCTION_CASING.asItem(),
+                MekanismBlocks.INDUCTION_PORT.asItem(),
+                MekanismBlocks.BASIC_INDUCTION_CELL.asItem()
+        ).addStoryBoard(CREATING_INDUCTION_MATRIX, InductionMatrixScenes::creatingInductionMatrix);
     }
 }
