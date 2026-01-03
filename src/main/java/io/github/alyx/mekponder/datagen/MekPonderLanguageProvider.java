@@ -60,6 +60,22 @@ public class MekPonderLanguageProvider extends LanguageProvider {
                 "2.\nBy mixing §cDeuterium§r and §aTritium§r together, §5D-T Fuel§r is created.\n\nWith §5D-T Fuel§r, the Reactor can reach a maximum Injection rate of §61000§rmB/t in total.\nRequiring §6500§rmb/t of both chemicals seperately.",
                 "However, when using §5D-T Fuel§r, the Reactor ignores the configured Injection Rate, and instead attempts to use §61000§rmb/t at all times."
         );
+
+        addPonderTranslation(
+                MekPonderScenes.CREATING_DYNAMIC_TANK,
+                "Creating a Dynamic Tank Multiblock",
+
+                "The Dynamic Tank is a Multiblock, capable of storing a large amount of either Fluids, or Chemicals.",
+                "Building a Dynamic Tank Multiblock requires Dynamic Tank blocks.",
+                "It is a cuboid structure and hollow on the inside.",
+                "Inner sections can be replaced by either Structural Glass, Reactor Glass, or Dynamic Valves.",
+                "Once properly built, it will emit Redstone Particles to indicate its completion.",
+                "A Dynamic Tank Multiblock can range from sizes of 3x3x3, up to 18x18x18.",
+                "The larger the structure is, the more capacity it has.\n Capacities differ from Fluids and Chemicals, with Chemicals having larger capacities than fluids.",
+                "To insert/extract Fluids or Chemicals, a Dynamic Valve can be used.",
+                "Simply connect a transmitter of your choosing to the valve.",
+                "To extract Fluids or Chemicals, the given transmitter must be set to pull from the valve."
+        );
     }
 
     private void addPonderTranslation(ResourceLocation ponder, String header, String... text) {

@@ -2,7 +2,9 @@ package io.github.alyx.mekponder.ponder;
 
 
 import io.github.alyx.mekponder.MekanismPonders;
+import io.github.alyx.mekponder.ponder.scenes.DynamicTankScenes;
 import io.github.alyx.mekponder.ponder.scenes.FusionReactorScenes;
+import mekanism.common.registries.MekanismBlocks;
 import mekanism.generators.common.registries.GeneratorsBlocks;
 import net.createmod.ponder.api.registration.PonderSceneRegistrationHelper;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -15,19 +17,29 @@ public class MekPonderScenes {
     public static final ResourceLocation STARTING_FUSION_REACTOR = MekanismPonders.id("starting_fusion_reactor");
     public static final ResourceLocation FUELING_FUSION_REACTOR = MekanismPonders.id("fueling_fusion_reactor");
 
+    public static final ResourceLocation CREATING_DYNAMIC_TANK = MekanismPonders.id("creating_dynamic_tank");
+
     public static void register(PonderSceneRegistrationHelper<ResourceLocation> helper) {
         PonderSceneRegistrationHelper<Item> HELPER = helper.withKeyFunction(BuiltInRegistries.ITEM::getKey);
 
-
+        // TODO: add for other related components
         HELPER.forComponents(
-                        GeneratorsBlocks.FUSION_REACTOR_CONTROLLER.getBlock().asItem(),
-                        GeneratorsBlocks.FUSION_REACTOR_FRAME.getBlock().asItem(),
-                        GeneratorsBlocks.FUSION_REACTOR_LOGIC_ADAPTER.getBlock().asItem(),
-                        GeneratorsBlocks.FUSION_REACTOR_PORT.getBlock().asItem()
+                        GeneratorsBlocks.FUSION_REACTOR_CONTROLLER.asItem(),
+                        GeneratorsBlocks.FUSION_REACTOR_FRAME.asItem(),
+                        GeneratorsBlocks.FUSION_REACTOR_LOGIC_ADAPTER.asItem(),
+                        GeneratorsBlocks.FUSION_REACTOR_PORT.asItem()
                 )
                 .addStoryBoard(CONSTRUCTING_FUSION_REACTOR, FusionReactorScenes::constructingReactor)
                 .addStoryBoard(CONFIGURING_FUSION_REACTOR, FusionReactorScenes::configuringReactor)
                 .addStoryBoard(STARTING_FUSION_REACTOR, FusionReactorScenes::startingReactor)
                 .addStoryBoard(FUELING_FUSION_REACTOR, FusionReactorScenes::fuelingReactor);
+
+
+        HELPER.forComponents(
+                MekanismBlocks.DYNAMIC_TANK.asItem(),
+                MekanismBlocks.DYNAMIC_VALVE.asItem()
+                )
+                .addStoryBoard(CREATING_DYNAMIC_TANK, DynamicTankScenes::creatingDynamicTank);
+
     }
 }
