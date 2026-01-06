@@ -2,7 +2,7 @@ package io.github.alyx.mekponder.ponder.scenes;
 
 
 import io.github.alyx.mekponder.mixin.AccessorAttributeStateActive;
-import io.github.alyx.mekponder.ponder.MekPonderScenes;
+import io.github.alyx.mekponder.ponder.PonderGeneratorScenes;
 import io.github.alyx.mekponder.util.SceneUtil;
 import mekanism.common.block.attribute.AttributeStateActive;
 import mekanism.common.block.attribute.Attributes;
@@ -26,7 +26,7 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class FusionReactorScenes {
     public static void constructingReactor(SceneBuilder scene, SceneBuildingUtil util) {
-        scene.title(MekPonderScenes.CONSTRUCTING_FUSION_REACTOR.getPath(), "Constructing a Fusion Reactor");
+        scene.title(PonderGeneratorScenes.CONSTRUCTING_FUSION_REACTOR.getPath(), "Constructing a Fusion Reactor");
         scene.showBasePlate();
         scene.idle(10);
         scene.world().showSection(util.select().layer(1), Direction.DOWN);
@@ -140,7 +140,7 @@ public class FusionReactorScenes {
     }
 
     public static void configuringReactor(SceneBuilder scene, SceneBuildingUtil util) {
-        scene.title(MekPonderScenes.CONFIGURING_FUSION_REACTOR.getPath(), "Configuring a Fusion Reactor");
+        scene.title(PonderGeneratorScenes.CONFIGURING_FUSION_REACTOR.getPath(), "Configuring a Fusion Reactor");
 
         // Intro
         scene.showBasePlate();
@@ -230,7 +230,7 @@ public class FusionReactorScenes {
     }
 
     public static void startingReactor(SceneBuilder scene, SceneBuildingUtil util) {
-        scene.title(MekPonderScenes.STARTING_FUSION_REACTOR.getPath(), "Starting a Fusion Reactor");
+        scene.title(PonderGeneratorScenes.STARTING_FUSION_REACTOR.getPath(), "Starting a Fusion Reactor");
         //scene.debug().debugSchematic();
 
         scene.showBasePlate();
@@ -301,7 +301,7 @@ public class FusionReactorScenes {
     }
 
     public static void fuelingReactor(SceneBuilder scene, SceneBuildingUtil util) {
-        scene.title(MekPonderScenes.FUELING_FUSION_REACTOR.getPath(), "Fueling a Fusion Reactor");
+        scene.title(PonderGeneratorScenes.FUELING_FUSION_REACTOR.getPath(), "Fueling a Fusion Reactor");
 
         // Intro
         scene.showBasePlate();

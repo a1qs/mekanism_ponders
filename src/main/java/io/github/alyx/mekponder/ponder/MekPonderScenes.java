@@ -3,21 +3,15 @@ package io.github.alyx.mekponder.ponder;
 
 import io.github.alyx.mekponder.MekanismPonders;
 import io.github.alyx.mekponder.ponder.scenes.DynamicTankScenes;
-import io.github.alyx.mekponder.ponder.scenes.FusionReactorScenes;
 import io.github.alyx.mekponder.ponder.scenes.InductionMatrixScenes;
 import io.github.alyx.mekponder.ponder.scenes.ThermalEvaporationPlantScenes;
 import mekanism.common.registries.MekanismBlocks;
-import mekanism.generators.common.registries.GeneratorsBlocks;
 import net.createmod.ponder.api.registration.PonderSceneRegistrationHelper;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 
 public class MekPonderScenes {
-    public static final ResourceLocation CONSTRUCTING_FUSION_REACTOR = MekanismPonders.id("constructing_fusion_reactor");
-    public static final ResourceLocation CONFIGURING_FUSION_REACTOR = MekanismPonders.id("configuring_fusion_reactor");
-    public static final ResourceLocation STARTING_FUSION_REACTOR = MekanismPonders.id("starting_fusion_reactor");
-    public static final ResourceLocation FUELING_FUSION_REACTOR = MekanismPonders.id("fueling_fusion_reactor");
 
     public static final ResourceLocation CREATING_DYNAMIC_TANK = MekanismPonders.id("creating_dynamic_tank");
     public static final ResourceLocation CREATING_INDUCTION_MATRIX = MekanismPonders.id("creating_induction_matrix");
@@ -27,16 +21,7 @@ public class MekPonderScenes {
         PonderSceneRegistrationHelper<Item> HELPER = helper.withKeyFunction(BuiltInRegistries.ITEM::getKey);
 
         // TODO: add for other related components
-        HELPER.forComponents(
-                        GeneratorsBlocks.FUSION_REACTOR_CONTROLLER.asItem(),
-                        GeneratorsBlocks.FUSION_REACTOR_FRAME.asItem(),
-                        GeneratorsBlocks.FUSION_REACTOR_LOGIC_ADAPTER.asItem(),
-                        GeneratorsBlocks.FUSION_REACTOR_PORT.asItem()
-                )
-                .addStoryBoard(CONSTRUCTING_FUSION_REACTOR, FusionReactorScenes::constructingReactor)
-                .addStoryBoard(CONFIGURING_FUSION_REACTOR, FusionReactorScenes::configuringReactor)
-                .addStoryBoard(STARTING_FUSION_REACTOR, FusionReactorScenes::startingReactor)
-                .addStoryBoard(FUELING_FUSION_REACTOR, FusionReactorScenes::fuelingReactor);
+
 
 
         HELPER.forComponents(
