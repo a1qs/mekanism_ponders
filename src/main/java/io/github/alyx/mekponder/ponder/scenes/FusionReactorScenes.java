@@ -189,7 +189,7 @@ public class FusionReactorScenes {
         scene.idle(120);
 
         scene.overlay().showText(80)
-                .text("By right clicking, the user can configure when it outputs a Redstone Signal.");
+                .text("By right clicking, you can configure when it outputs a Redstone Signal.");
 
         scene.idle(70);
 
@@ -214,7 +214,7 @@ public class FusionReactorScenes {
         scene.idle(15);
 
         scene.overlay().showOutlineWithText(util.select().position(3, 5, 3), 130)
-                .text("By right clicking the Fusion Reactor Controller, the user can configure the Fuel Injection Rate of the Reactor");
+                .text("By right clicking the Fusion Reactor Controller, you can configure the Fuel Injection Rate of the Reactor");
         scene.idle(135);
 
         scene.overlay().showControls(util.vector().blockSurface(util.grid().at(3, 5, 3), Direction.UP), Pointing.RIGHT, 40)

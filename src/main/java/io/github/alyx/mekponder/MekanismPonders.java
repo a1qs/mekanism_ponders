@@ -12,7 +12,6 @@ import net.neoforged.fml.ModContainer;
 
 
 // TODO: Helper method for destroying blocks in range
-// TODO: Replace "the user" -> "You"
 // TODO: Figure out Energy Cube and transmitter logic
 // TODO: mention UI in Dynamic tank
 // TODO: Improve multi particles

@@ -34,8 +34,8 @@ public class MekPonderLanguageProvider extends LanguageProvider {
                 "While in §aInput§r mode, the Reactor can accept §lChemicals§r, §lFluids§r and §lHeat§r.",
                 "While in §4Output§r mode, the Reactor can output §lChemicals§r, §lHeat§r and §lEnergy§r.",
                 "The Fusion Reactor Logic Port is able to emit redstone based on the state of the Reactor.",
-                "By right clicking, the user can configure when it outputs a Redstone Signal.",
-                "By right clicking the Fusion Reactor Controller, the user can configure the Fuel Injection Rate of the Reactor",
+                "By right clicking, you can configure when it outputs a Redstone Signal.",
+                "By right clicking the Fusion Reactor Controller, you can configure the Fuel Injection Rate of the Reactor",
                 "In addition to that, it shows various statistics, and has a slot for a §lHohlraum§r"
         );
 
