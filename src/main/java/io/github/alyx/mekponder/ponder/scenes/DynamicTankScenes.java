@@ -59,7 +59,7 @@ public class DynamicTankScenes {
 
         scene.idle(85);
 
-        SceneUtil.multiBlockFormParticles(scene, util, util.grid().at(1, 1, 1), util.grid().at(4, 4, 4),  6);
+        SceneUtil.multiBlockFormParticles(scene, util.grid().at(1, 1, 1), util.grid().at(4, 4, 4),  6);
 
         scene.idle(45);
         scene.addKeyframe();

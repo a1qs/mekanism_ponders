@@ -86,7 +86,7 @@ public class ThermalEvaporationPlantScenes {
                 .text("Once constructed, the Multiblock will emit Redstone particles to indicate its completion.");
         scene.idle(90);
 
-        SceneUtil.multiBlockFormParticles(scene, util, util.grid().at(1, 1, 1), util.grid().at(4, 3, 4), 6);
+        SceneUtil.multiBlockFormParticles(scene, util.grid().at(1, 1, 1), util.grid().at(4, 3, 4), 6);
 
         scene.idle(60);
 

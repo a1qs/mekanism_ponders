@@ -104,7 +104,7 @@ public class InductionMatrixScenes {
                 .text("Once constructed, the structure will emit Redstone particles to indicate its completion.");
 
         scene.idle(80);
-        SceneUtil.multiBlockFormParticles(scene, util, util.grid().at(1, 1, 1), util.grid().at(5, 5, 5), 6);
+        SceneUtil.multiBlockFormParticles(scene, util.grid().at(1, 1, 1), util.grid().at(5, 5, 5), 6);
 
         scene.idle(40);
 

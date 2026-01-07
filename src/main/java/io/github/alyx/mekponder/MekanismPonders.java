@@ -14,7 +14,6 @@ import net.neoforged.fml.ModContainer;
 // TODO: Helper method for destroying blocks in range
 // TODO: Figure out Energy Cube and transmitter logic
 // TODO: mention UI in Dynamic tank
-// TODO: Improve multi particles
 // TODO: Seperate Stuff from MekGens and only load if mekgens is loaded (e.g reactor glass, heat generator)
 @Mod(MekanismPonders.MODID)
 public class MekanismPonders {
