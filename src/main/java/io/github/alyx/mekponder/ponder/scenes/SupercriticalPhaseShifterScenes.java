@@ -11,6 +11,8 @@ import mekanism.common.block.attribute.Attributes;
 import mekanism.common.registries.MekanismBlocks;
 import mekanism.common.registries.MekanismChemicals;
 import mekanism.common.registries.MekanismItems;
+import mekanism.common.tile.multiblock.TileEntitySPSCasing;
+import mekanism.generators.common.tile.fusion.TileEntityFusionReactorController;
 import net.createmod.catnip.gui.element.ScreenElement;
 import net.createmod.catnip.math.Pointing;
 import net.createmod.ponder.api.PonderPalette;
@@ -153,6 +155,9 @@ public class SupercriticalPhaseShifterScenes {
                 Direction.DOWN
         );
 
+        scene.world().modifyBlockEntityNBT(util.select().position(5, 1, 3), TileEntitySPSCasing.class, nbt -> nbt.putByte("redstone", (byte) 15)); // dear god why
+
+
         scene.idle(40);
 
         scene.overlay().showControls(util.vector().centerOf(util.grid().at(5, 2, 0)), Pointing.RIGHT, 40)
@@ -178,6 +183,13 @@ public class SupercriticalPhaseShifterScenes {
         scene.idle(20);
 
         scene.world().showSection(util.select().position(3, 2, 0), Direction.DOWN);
+        scene.idle(20);
+
+        scene.overlay().showControls(util.vector().centerOf(util.grid().at(3, 2, 0)), Pointing.RIGHT, 40)
+                .showing(new ChemicalPonderRender(MekanismChemicals.ANTIMATTER.getStack(1000)));
+
+        scene.idle(60);
+
 
         scene.idle(40);
 
