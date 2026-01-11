@@ -3,7 +3,7 @@ package io.github.alyx.mekponder.datagen;
 import io.github.alyx.mekponder.MekanismPonders;
 
 import io.github.alyx.mekponder.ponder.MekPonderScenes;
-import io.github.alyx.mekponder.ponder.PonderGeneratorScenes;
+import io.github.alyx.mekponder.ponder.MekGensPonderScenes;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.neoforge.common.data.LanguageProvider;
@@ -16,7 +16,7 @@ public class MekPonderLanguageProvider extends LanguageProvider {
     @Override
     protected void addTranslations() {
         addPonderTranslation(
-                PonderGeneratorScenes.CONSTRUCTING_FUSION_REACTOR,
+                MekGensPonderScenes.CONSTRUCTING_FUSION_REACTOR,
                 "Constructing a Fusion Reactor",
 
                 "This is the basis of a Fusion Reactor.\nIt's made out of Fusion Reactor Frames.",
@@ -27,7 +27,7 @@ public class MekPonderLanguageProvider extends LanguageProvider {
         );
 
         addPonderTranslation(
-                PonderGeneratorScenes.CONFIGURING_FUSION_REACTOR,
+                MekGensPonderScenes.CONFIGURING_FUSION_REACTOR,
                 "Configuring a Fusion Reactor",
 
                 "The eject mode of a Fusion Reactor Port can be configured by using a Configurator.\n\nThis can toggle the port to either §4Output§r or §aInput§r mode.",
@@ -40,7 +40,7 @@ public class MekPonderLanguageProvider extends LanguageProvider {
         );
 
         addPonderTranslation(
-                PonderGeneratorScenes.STARTING_FUSION_REACTOR,
+                MekGensPonderScenes.STARTING_FUSION_REACTOR,
                 "Starting a Fusion Reactor",
 
                 "To start a Reactor, the Fusion Reactor Controller must contain a §lHohlraum§r filled with §5D-T Fuel§r.",
@@ -53,7 +53,7 @@ public class MekPonderLanguageProvider extends LanguageProvider {
         );
 
         addPonderTranslation(
-                PonderGeneratorScenes.FUELING_FUSION_REACTOR,
+                MekGensPonderScenes.FUELING_FUSION_REACTOR,
                 "Fueling a Fusion Reactor",
 
                 "A Fusion reactor can be fueled in two ways.",

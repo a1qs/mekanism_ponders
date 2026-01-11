@@ -51,7 +51,7 @@ public class MekPonderScenes {
 
 
         if (MekanismPonders.isMekGensLoaded) {
-            PonderGeneratorScenes.registerGeneratorScenes(helper);
+            MekGensPonderScenes.registerGeneratorScenes(helper);
         }
     }
 }

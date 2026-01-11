@@ -8,7 +8,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 
-public class PonderGeneratorScenes {
+public class MekGensPonderScenes {
     public static final ResourceLocation CONSTRUCTING_FUSION_REACTOR = MekanismPonders.id("constructing_fusion_reactor");
     public static final ResourceLocation CONFIGURING_FUSION_REACTOR = MekanismPonders.id("configuring_fusion_reactor");
     public static final ResourceLocation STARTING_FUSION_REACTOR = MekanismPonders.id("starting_fusion_reactor");
