@@ -4,10 +4,12 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "AccessorAttributeStateActive",
+    "AccessorPonderScene",
     "InvokerMekanismTileEntityRenderer",
     "MixinBoltRenderer",
     "MixinRenderFluidTank",
     "MixinRenderFusionReactor",
+    "MixinRenderResizableCuboid",
     "MixinRenderSPS"
   ],
   "injectors": {
@@ -17,6 +19,7 @@
     "requireAnnotations": true
   },
   "client": [
-    "AccessorMinecraft"
+    "AccessorMinecraft",
+    "InvokerPonderUI"
   ]
 }
