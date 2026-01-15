@@ -9,6 +9,9 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 
+
+
+
 public class MekGensPonderScenes {
     public static final ResourceLocation CONSTRUCTING_FUSION_REACTOR = MekanismPonders.id("constructing_fusion_reactor");
     public static final ResourceLocation CONFIGURING_FUSION_REACTOR = MekanismPonders.id("configuring_fusion_reactor");
@@ -17,6 +20,7 @@ public class MekGensPonderScenes {
 
     public static final ResourceLocation CREATING_FISSION_REACTOR = MekanismPonders.id("creating_fission_reactor");
     public static final ResourceLocation CONFIGURING_FISSION_REACTOR = MekanismPonders.id("configuring_fission_reactor");
+    public static final ResourceLocation COOLING_FISSION_REACTOR = MekanismPonders.id("cooling_fission_reactor");
 
     // Only loaded if Mekanism: Generators is loaded
     public static void registerGeneratorScenes(PonderSceneRegistrationHelper<ResourceLocation> helper) {
@@ -43,7 +47,8 @@ public class MekGensPonderScenes {
                         GeneratorsBlocks.CONTROL_ROD_ASSEMBLY.asItem()
                 )
                 .addStoryBoard(CREATING_FISSION_REACTOR, FissionReactorScenes::creatingFissionReactor)
-                .addStoryBoard(CONFIGURING_FISSION_REACTOR, FissionReactorScenes::configuringFissionReactor);
+                .addStoryBoard(CONFIGURING_FISSION_REACTOR, FissionReactorScenes::configuringFissionReactor)
+                .addStoryBoard(COOLING_FISSION_REACTOR, FissionReactorScenes::coolingFissionReactor);
 
     }
 }

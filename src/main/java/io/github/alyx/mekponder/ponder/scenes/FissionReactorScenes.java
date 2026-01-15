@@ -1,9 +1,12 @@
 package io.github.alyx.mekponder.ponder.scenes;
 
-import io.github.alyx.mekponder.mixin.AccessorAttributeStateActive;
 import io.github.alyx.mekponder.ponder.MekGensPonderScenes;
+import io.github.alyx.mekponder.ponder.element.ChemicalPonderRender;
+import io.github.alyx.mekponder.ponder.element.FluidPonderRender;
 import io.github.alyx.mekponder.util.SceneUtil;
-import mekanism.common.block.attribute.Attributes;
+import mekanism.api.chemical.ChemicalStack;
+import mekanism.common.registries.MekanismBlocks;
+import mekanism.common.registries.MekanismChemicals;
 import mekanism.common.registries.MekanismItems;
 import mekanism.generators.common.block.attribute.AttributeStateFissionPortMode;
 import mekanism.generators.common.registries.GeneratorsBlocks;
@@ -13,10 +16,13 @@ import net.createmod.ponder.api.scene.SceneBuilder;
 import net.createmod.ponder.api.scene.SceneBuildingUtil;
 import net.createmod.ponder.api.scene.Selection;
 import net.minecraft.core.Direction;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ComparatorBlock;
 import net.minecraft.world.level.block.LeverBlock;
+import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.AABB;
+import net.neoforged.neoforge.fluids.FluidStack;
 
 public class FissionReactorScenes {
 
@@ -279,21 +285,85 @@ public class FissionReactorScenes {
 
         scene.idle(180);
     }
+
+    public static void coolingFissionReactor(SceneBuilder scene, SceneBuildingUtil util) {
+        scene.title(MekGensPonderScenes.COOLING_FISSION_REACTOR.getPath(), "Cooling a Fission Reactor");
+        scene.showBasePlate();
+
+
+        Selection reactor = util.select().fromTo(1, 1, 1, 5, 5, 5);
+
+
+        scene.idle(10);
+        scene.world().showSection(reactor, Direction.DOWN);
+
+        scene.idle(25);
+
+        scene.overlay().showText(80)
+                .text("The Fission Reactor can be cooled in two ways.");
+
+        scene.idle(100);
+
+        scene.overlay().showText(300)
+                .colored(PonderPalette.BLUE)
+                .text("1. Water cooling\n\nWater cooling the reactor produces steam. The reactor uses 20,000mB/t of Water per mB of Burn Rate.\n\nSteam can be used in a Turbine to gain energy, and can also be used to recycle the steam back into Water using Saturating Condensers.");
+
+
+        scene.addKeyframe();
+
+        scene.idle(290);
+
+        scene.world().showSection(util.select().position(4, 6, 2), Direction.DOWN);
+        scene.idle(5);
+        scene.world().showSection(util.select().position(2, 6, 4), Direction.DOWN);
+
+        scene.overlay().showControls(util.vector().centerOf(4, 6, 2), Pointing.RIGHT, 40)
+                .showing(new FluidPonderRender(new FluidStack(Fluids.WATER, 1000)));
+
+        scene.idle(5);
+        scene.overlay().showControls(util.vector().centerOf(2, 6, 4), Pointing.LEFT, 40)
+                .showing(new ChemicalPonderRender(new ChemicalStack(MekanismChemicals.STEAM, 1000)));
+
+        scene.idle(60);
+
+        scene.world().hideSection(util.select().position(2, 6, 4), Direction.UP);
+        scene.idle(5);
+        scene.world().hideSection(util.select().position(4, 6, 2), Direction.UP);
+
+        scene.idle(25);
+
+        scene.addKeyframe();
+
+        scene.world().setBlock(util.grid().at(4, 6, 2), MekanismBlocks.ULTIMATE_CHEMICAL_TANK.defaultState(), false);
+
+        scene.idle(20);
+
+        scene.overlay().showText(300)
+                .colored(PonderPalette.OUTPUT)
+                .text("2. Sodium cooling\n\nSodium cooling the reactor produces Superheated Sodium.\nSuperheated Sodium can be used create Steam in a Thermoelectric Boiler, as well returning the heated Sodium to a cooled state, where it can be used as a coolant again.");
+
+        scene.idle(325);
+        scene.overlay().showText(240)
+                .colored(PonderPalette.OUTPUT)
+                .text("This method uses 200.000mB/t of Sodium per mB of Burn Rate, however provides double the cooling capacity that Water provides\n\n This allows the reactor able to handle double the Burn Rate it could with Water.");
+
+        scene.idle(230);
+
+        scene.world().showSection(util.select().position(4, 6, 2), Direction.DOWN);
+        scene.idle(5);
+        scene.world().showSection(util.select().position(2, 6, 4), Direction.DOWN);
+
+        scene.overlay().showControls(util.vector().centerOf(4, 6, 2), Pointing.RIGHT, 40)
+                .showing(new ChemicalPonderRender(new ChemicalStack(MekanismChemicals.SODIUM, 1000)));
+
+        scene.idle(5);
+        scene.overlay().showControls(util.vector().centerOf(2, 6, 4), Pointing.LEFT, 40)
+                .showing(new ChemicalPonderRender(new ChemicalStack(MekanismChemicals.SUPERHEATED_SODIUM, 1000)));
+
+        scene.idle(60);
+    }
+
     /*
-     * 2. Configuring Reactor
-     *
-     *
-     *
-     *
-     * 3. Cooling the Fission Reactor
-     *
-     * The Fission Reactor can be cooled in two ways:
-     *      1. Water cooling the reactor produces steam, which can be used in a Turbine and be turned into energy, as well as giving the possibility to recycle the Water by using
-     *          Saturated Condensers within the Turbine, given that the Reactor uses 20.000mB/t of Water per mB of Burn Rate.
-     *      2. Sodium cooling the reactor produces Superheated Sodium, which can be used to create Steam in a Thermoelectric Boiler, as well returning the heated Sodium to a cooled
-     *          state, where it can be used again as a coolant. This method uses 200.000mB/t of Sodium per mB of Burn Rate, however provides double the cooling capacity that Water provides,
-     *          making the reactor be able to handle double the Burn Rate it could with Water.
-     *
      * 4. Running the Reactor
      *
      *  By providing Fission Fuel, the reactor can be activated, and will produce Nuclear waste every tick correlating to the Burn Rate set for the Reactor.
