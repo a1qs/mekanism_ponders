@@ -21,6 +21,7 @@ public class MekGensPonderScenes {
     public static final ResourceLocation CREATING_FISSION_REACTOR = MekanismPonders.id("creating_fission_reactor");
     public static final ResourceLocation CONFIGURING_FISSION_REACTOR = MekanismPonders.id("configuring_fission_reactor");
     public static final ResourceLocation COOLING_FISSION_REACTOR = MekanismPonders.id("cooling_fission_reactor");
+    public static final ResourceLocation RUNNING_FISSION_REACTOR = MekanismPonders.id("running_fission_reactor");
 
     // Only loaded if Mekanism: Generators is loaded
     public static void registerGeneratorScenes(PonderSceneRegistrationHelper<ResourceLocation> helper) {
@@ -48,7 +49,8 @@ public class MekGensPonderScenes {
                 )
                 .addStoryBoard(CREATING_FISSION_REACTOR, FissionReactorScenes::creatingFissionReactor)
                 .addStoryBoard(CONFIGURING_FISSION_REACTOR, FissionReactorScenes::configuringFissionReactor)
-                .addStoryBoard(COOLING_FISSION_REACTOR, FissionReactorScenes::coolingFissionReactor);
+                .addStoryBoard(COOLING_FISSION_REACTOR, FissionReactorScenes::coolingFissionReactor)
+                .addStoryBoard(RUNNING_FISSION_REACTOR, FissionReactorScenes::runningFissionReactor);
 
     }
 }

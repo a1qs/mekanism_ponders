@@ -10,13 +10,13 @@ import mekanism.common.registries.MekanismChemicals;
 import mekanism.common.registries.MekanismItems;
 import mekanism.generators.common.block.attribute.AttributeStateFissionPortMode;
 import mekanism.generators.common.registries.GeneratorsBlocks;
+import mekanism.generators.common.registries.GeneratorsChemicals;
 import net.createmod.catnip.math.Pointing;
 import net.createmod.ponder.api.PonderPalette;
 import net.createmod.ponder.api.scene.SceneBuilder;
 import net.createmod.ponder.api.scene.SceneBuildingUtil;
 import net.createmod.ponder.api.scene.Selection;
 import net.minecraft.core.Direction;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ComparatorBlock;
 import net.minecraft.world.level.block.LeverBlock;
@@ -363,13 +363,70 @@ public class FissionReactorScenes {
         scene.idle(60);
     }
 
-    /*
-     * 4. Running the Reactor
-     *
-     *  By providing Fission Fuel, the reactor can be activated, and will produce Nuclear waste every tick correlating to the Burn Rate set for the Reactor.
-     *  While running, the reactor produces heat and can consume Coolant to cool itself down, producing steam or superheated sodium in the process.
-     *  If the temperature reaches levels beyond 1200K the reactor will gradually increase its damage percentage.
-     *  Once it's beyond 100%, each tick has a chance that the reactor will explode, while it is above 100%
-     *
-     */
+    public static void runningFissionReactor(SceneBuilder scene, SceneBuildingUtil util) {
+        scene.title(MekGensPonderScenes.RUNNING_FISSION_REACTOR.getPath(), "Running a Fission Reactor");
+        scene.showBasePlate();
+
+
+        Selection reactor = util.select().fromTo(1, 1, 1, 5, 5, 5);
+
+
+        scene.idle(10);
+        scene.world().showSection(reactor, Direction.DOWN);
+
+        scene.idle(30);
+
+        scene.overlay().showText(160)
+                .colored(PonderPalette.BLUE)
+                .text("By providing Fission Fuel, the reactor can be activated, and will produce Nuclear Waste every tick correlating to the Burn Rate set for the Reactor.");
+
+        scene.idle(140);
+
+        scene.world().showSection(util.select().position(4, 6, 2), Direction.DOWN);
+        scene.idle(5);
+        scene.world().showSection(util.select().position(2, 6, 4), Direction.DOWN);
+
+        scene.idle(20);
+
+        scene.overlay().showControls(util.vector().centerOf(4, 6, 2), Pointing.RIGHT, 40)
+                .showing(new ChemicalPonderRender(new ChemicalStack(MekanismChemicals.FISSILE_FUEL, 1000)));
+
+        scene.idle(5);
+        scene.overlay().showControls(util.vector().centerOf(2, 6, 4), Pointing.LEFT, 40)
+                .showing(new ChemicalPonderRender(new ChemicalStack(MekanismChemicals.NUCLEAR_WASTE, 1000)));
+
+        scene.idle(60);
+
+        scene.addKeyframe();
+        scene.idle(20);
+
+        scene.overlay().showText(200)
+                .pointAt(util.vector().of(2.5, 6, 4.5))
+                .colored(PonderPalette.OUTPUT)
+                .text("Nuclear Waste is radioactive, meaning that it cannot be stored in normal Chemical Tanks.\nRadioactive Waste Barrels can be used, which will dissapate the waste stored.");
+
+        scene.idle(220);
+        scene.addKeyframe();
+        scene.idle(20);
+
+
+        scene.overlay().showText(180)
+                .colored(PonderPalette.BLUE)
+                .text("While running, the reactor produces heat and can consume Coolant to cool itself down, producing Steam or Superheated Sodium in the process.");
+
+        scene.idle(200);
+
+        scene.overlay().showText(140)
+                .colored(PonderPalette.OUTPUT)
+                .text("If the temperature reaches levels beyond 1200K the reactor will increase its damage percentage.");
+
+        scene.idle(160);
+
+        scene.overlay().showText(140)
+                .colored(PonderPalette.RED)
+                .text("Once it's beyond 100%, each tick has a chance that the reactor will explode, while it is above 100%.");
+
+        scene.idle(160);
+
+    }
 }
