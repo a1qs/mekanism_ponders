@@ -1,4 +1,4 @@
-package io.github.alyx.mekponder.ponder.scenes;
+package io.github.alyx.mekponder.ponder.generators.scenes;
 
 
 import mekanism.common.registries.MekanismBlocks;

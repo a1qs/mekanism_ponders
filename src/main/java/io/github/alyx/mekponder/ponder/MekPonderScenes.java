@@ -2,6 +2,7 @@ package io.github.alyx.mekponder.ponder;
 
 
 import io.github.alyx.mekponder.MekanismPonders;
+import io.github.alyx.mekponder.ponder.generators.MekGensPonderScenes;
 import io.github.alyx.mekponder.ponder.scenes.DynamicTankScenes;
 import io.github.alyx.mekponder.ponder.scenes.InductionMatrixScenes;
 import io.github.alyx.mekponder.ponder.scenes.SupercriticalPhaseShifterScenes;

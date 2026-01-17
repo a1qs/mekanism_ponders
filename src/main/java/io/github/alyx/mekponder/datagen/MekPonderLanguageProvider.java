@@ -3,7 +3,7 @@ package io.github.alyx.mekponder.datagen;
 import io.github.alyx.mekponder.MekanismPonders;
 
 import io.github.alyx.mekponder.ponder.MekPonderScenes;
-import io.github.alyx.mekponder.ponder.MekGensPonderScenes;
+import io.github.alyx.mekponder.ponder.generators.MekGensPonderScenes;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.neoforge.common.data.LanguageProvider;

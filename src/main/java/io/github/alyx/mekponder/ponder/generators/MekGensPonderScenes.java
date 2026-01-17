@@ -1,8 +1,8 @@
-package io.github.alyx.mekponder.ponder;
+package io.github.alyx.mekponder.ponder.generators;
 
 import io.github.alyx.mekponder.MekanismPonders;
-import io.github.alyx.mekponder.ponder.scenes.FissionReactorScenes;
-import io.github.alyx.mekponder.ponder.scenes.FusionReactorScenes;
+import io.github.alyx.mekponder.ponder.generators.scenes.FissionReactorScenes;
+import io.github.alyx.mekponder.ponder.generators.scenes.FusionReactorScenes;
 import mekanism.generators.common.registries.GeneratorsBlocks;
 import net.createmod.ponder.api.registration.PonderSceneRegistrationHelper;
 import net.minecraft.core.registries.BuiltInRegistries;

@@ -1,6 +1,6 @@
-package io.github.alyx.mekponder.ponder.scenes;
+package io.github.alyx.mekponder.ponder.generators.scenes;
 
-import io.github.alyx.mekponder.ponder.MekGensPonderScenes;
+import io.github.alyx.mekponder.ponder.generators.MekGensPonderScenes;
 import io.github.alyx.mekponder.ponder.element.ChemicalPonderRender;
 import io.github.alyx.mekponder.ponder.element.FluidPonderRender;
 import io.github.alyx.mekponder.util.SceneUtil;
@@ -10,7 +10,6 @@ import mekanism.common.registries.MekanismChemicals;
 import mekanism.common.registries.MekanismItems;
 import mekanism.generators.common.block.attribute.AttributeStateFissionPortMode;
 import mekanism.generators.common.registries.GeneratorsBlocks;
-import mekanism.generators.common.registries.GeneratorsChemicals;
 import net.createmod.catnip.math.Pointing;
 import net.createmod.ponder.api.PonderPalette;
 import net.createmod.ponder.api.scene.SceneBuilder;

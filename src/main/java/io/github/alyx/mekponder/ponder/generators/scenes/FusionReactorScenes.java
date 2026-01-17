@@ -1,8 +1,8 @@
-package io.github.alyx.mekponder.ponder.scenes;
+package io.github.alyx.mekponder.ponder.generators.scenes;
 
 
 import io.github.alyx.mekponder.mixin.AccessorAttributeStateActive;
-import io.github.alyx.mekponder.ponder.MekGensPonderScenes;
+import io.github.alyx.mekponder.ponder.generators.MekGensPonderScenes;
 import io.github.alyx.mekponder.util.SceneUtil;
 import mekanism.common.block.attribute.AttributeStateActive;
 import mekanism.common.block.attribute.Attributes;

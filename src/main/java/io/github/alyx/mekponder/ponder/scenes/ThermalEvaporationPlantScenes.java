@@ -3,6 +3,7 @@ package io.github.alyx.mekponder.ponder.scenes;
 import io.github.alyx.mekponder.MekanismPonders;
 import io.github.alyx.mekponder.mixin.AccessorAttributeStateActive;
 import io.github.alyx.mekponder.ponder.MekPonderScenes;
+import io.github.alyx.mekponder.ponder.generators.scenes.MiscGeneratorScenes;
 import io.github.alyx.mekponder.util.SceneUtil;
 import mekanism.common.block.attribute.Attributes;
 import mekanism.common.registries.MekanismBlocks;
