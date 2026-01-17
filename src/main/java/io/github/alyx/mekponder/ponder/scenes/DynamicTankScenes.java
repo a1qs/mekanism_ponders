@@ -17,7 +17,7 @@ public class DynamicTankScenes {
         scene.title(MekPonderScenes.CREATING_DYNAMIC_TANK.getPath(), "Creating a Dynamic Tank Multiblock");
         scene.showBasePlate();
         scene.idle(10);
-        scene.world().showSection(util.select().layersFrom(1), Direction.DOWN);
+        scene.world().showSection(util.select().fromTo(1,1, 1, 4, 4, 4), Direction.DOWN);
         scene.idle(20);
 
 
@@ -90,7 +90,6 @@ public class DynamicTankScenes {
         scene.addKeyframe();
 
         scene.world().hideSection(util.select().position(2, 2, 0), Direction.UP);
-        scene.world().hideSection(util.select().position(3, 5, 3), Direction.UP);
 
 
         scene.idle(5);
@@ -102,7 +101,6 @@ public class DynamicTankScenes {
         scene.idle(135);
 
         scene.world().setBlock(util.grid().at(2, 2, 0), MekanismBlocks.ULTIMATE_MECHANICAL_PIPE.defaultState(), true);
-        scene.world().setBlock(util.grid().at(3, 5, 3), MekanismBlocks.ULTIMATE_FLUID_TANK.defaultState(), true);
 
         scene.overlay().showText(100)
                 .text("Simply connect a transmitter of your choosing to the valve.");
