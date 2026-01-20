@@ -3,7 +3,9 @@ package io.github.alyx.mekponder.ponder.generators;
 import io.github.alyx.mekponder.MekanismPonders;
 import io.github.alyx.mekponder.ponder.generators.scenes.FissionReactorScenes;
 import io.github.alyx.mekponder.ponder.generators.scenes.FusionReactorScenes;
+import io.github.alyx.mekponder.ponder.generators.scenes.IndustrialTurbineScenes;
 import mekanism.generators.common.registries.GeneratorsBlocks;
+import mekanism.generators.common.registries.GeneratorsItems;
 import net.createmod.ponder.api.registration.PonderSceneRegistrationHelper;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
@@ -22,6 +24,8 @@ public class MekGensPonderScenes {
     public static final ResourceLocation CONFIGURING_FISSION_REACTOR = MekanismPonders.id("configuring_fission_reactor");
     public static final ResourceLocation COOLING_FISSION_REACTOR = MekanismPonders.id("cooling_fission_reactor");
     public static final ResourceLocation RUNNING_FISSION_REACTOR = MekanismPonders.id("running_fission_reactor");
+
+    public static final ResourceLocation CREATING_TURBINE = MekanismPonders.id("creating_industrial_turbine");
 
     // Only loaded if Mekanism: Generators is loaded
     public static void registerGeneratorScenes(PonderSceneRegistrationHelper<ResourceLocation> helper) {
@@ -52,5 +56,14 @@ public class MekGensPonderScenes {
                 .addStoryBoard(COOLING_FISSION_REACTOR, FissionReactorScenes::coolingFissionReactor)
                 .addStoryBoard(RUNNING_FISSION_REACTOR, FissionReactorScenes::runningFissionReactor);
 
+        HELPER.forComponents(
+                GeneratorsBlocks.TURBINE_CASING.asItem(),
+                GeneratorsBlocks.TURBINE_VALVE.asItem(),
+                GeneratorsBlocks.TURBINE_VENT.asItem(),
+                GeneratorsBlocks.TURBINE_ROTOR.asItem(),
+                GeneratorsBlocks.ROTATIONAL_COMPLEX.asItem(),
+                GeneratorsItems.TURBINE_BLADE.asItem()
+            )
+                .addStoryBoard(CREATING_TURBINE, IndustrialTurbineScenes::creatingTurbine);
     }
 }
