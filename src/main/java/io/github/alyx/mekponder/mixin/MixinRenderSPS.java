@@ -1,6 +1,7 @@
 package io.github.alyx.mekponder.mixin;
 
 import com.mojang.blaze3d.vertex.PoseStack;
+import io.github.alyx.mekponder.util.MiscUtil;
 import mekanism.client.render.lib.effect.BoltRenderer;
 import mekanism.client.render.tileentity.RenderSPS;
 import mekanism.common.content.sps.SPSMultiblockData;
@@ -46,7 +47,7 @@ public abstract class MixinRenderSPS {
 
     @Inject(method = "render(Lmekanism/common/tile/multiblock/TileEntitySPSCasing;Lmekanism/common/content/sps/SPSMultiblockData;FLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;IILnet/minecraft/util/profiling/ProfilerFiller;)V", at = @At("HEAD"), cancellable = true)
     private void spsPonderLevelRenderer(TileEntitySPSCasing tile, SPSMultiblockData multiblock, float partialTick, PoseStack matrix, MultiBufferSource renderer, int light, int overlayLight, ProfilerFiller profiler, CallbackInfo ci) {
-        if (tile.getLevel() instanceof PonderLevel) {
+        if (MiscUtil.isInPonderLevel(tile.getLevel())) {
 
             if (tile.getBlockPos().equals(new BlockPos(5, 1, 3))) {
 

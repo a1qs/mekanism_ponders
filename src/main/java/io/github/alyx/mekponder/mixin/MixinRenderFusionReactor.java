@@ -2,6 +2,7 @@ package io.github.alyx.mekponder.mixin;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
+import io.github.alyx.mekponder.util.MiscUtil;
 import mekanism.api.text.EnumColor;
 import mekanism.client.model.ModelEnergyCore;
 import mekanism.generators.client.render.RenderFusionReactor;
@@ -32,8 +33,7 @@ public abstract class MixinRenderFusionReactor {
 
     @Inject(method = "render(Lmekanism/generators/common/tile/fusion/TileEntityFusionReactorController;Lmekanism/generators/common/content/fusion/FusionReactorMultiblockData;FLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;IILnet/minecraft/util/profiling/ProfilerFiller;)V", at = @At("HEAD"), cancellable = true)
     private void fusionPonderLevelRenderer(TileEntityFusionReactorController tile, FusionReactorMultiblockData multiblock, float partialTicks, PoseStack matrix, MultiBufferSource renderer, int light, int overlayLight, ProfilerFiller profiler, CallbackInfo ci) {
-        Level level = tile.getLevel();
-        if (level instanceof PonderLevel) {
+        if (MiscUtil.isInPonderLevel(tile.getLevel())) {
             var e = tile.saveWithFullMetadata(tile.getLevel().registryAccess());
             if (e.getByte("redstone") == 0) { // why
                 ci.cancel();
