@@ -9,6 +9,7 @@
     "MixinBoltRenderer",
     "MixinRenderFluidTank",
     "MixinRenderFusionReactor",
+    "MixinRenderIndustrialTurbine",
     "MixinRenderResizableCuboid",
     "MixinRenderSPS"
   ],
