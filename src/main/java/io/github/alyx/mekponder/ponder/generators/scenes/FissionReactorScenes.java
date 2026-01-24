@@ -310,20 +310,20 @@ public class FissionReactorScenes {
 
         scene.addKeyframe();
 
-        scene.idle(290);
+        scene.idle(250);
 
         scene.world().showSection(util.select().position(4, 6, 2), Direction.DOWN);
-        scene.idle(5);
+        scene.idle(10);
         scene.world().showSection(util.select().position(2, 6, 4), Direction.DOWN);
 
-        scene.overlay().showControls(util.vector().centerOf(4, 6, 2), Pointing.RIGHT, 40)
+        scene.overlay().showControls(util.vector().centerOf(4, 6, 2), Pointing.RIGHT, 80)
                 .showing(new FluidPonderRender(new FluidStack(Fluids.WATER, 1000)));
 
         scene.idle(5);
-        scene.overlay().showControls(util.vector().centerOf(2, 6, 4), Pointing.LEFT, 40)
+        scene.overlay().showControls(util.vector().centerOf(2, 6, 4), Pointing.LEFT, 80)
                 .showing(new ChemicalPonderRender(new ChemicalStack(MekanismChemicals.STEAM, 1000)));
 
-        scene.idle(60);
+        scene.idle(100);
 
         scene.world().hideSection(util.select().position(2, 6, 4), Direction.UP);
         scene.idle(5);
