@@ -17,10 +17,6 @@ import net.minecraft.world.phys.AABB;
 
 public class ThermalEvaporationPlantScenes {
 
-
-
-
-    // TODO: mixin into RenderThermalEvaporationPlant to render Water
     public static void creatingThermalEvaporationPlant(SceneBuilder scene, SceneBuildingUtil util) {
         scene.title(MekPonderScenes.CREATING_THERMAL_EVAPORATION_PLANT.getPath(), "Creating a Thermal Evaporation Plant");
         scene.showBasePlate();
@@ -110,7 +106,6 @@ public class ThermalEvaporationPlantScenes {
                 .text("Heat can be supplied through external means by using Thermal Evaporation Valves.");
 
         scene.idle(115);
-
 
         if (MekanismPonders.isMekGensLoaded) {
             MiscGeneratorScenes.solarPanelsThermalEvaporationPlant(scene, util);
