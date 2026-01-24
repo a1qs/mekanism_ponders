@@ -26,6 +26,7 @@ public class MekGensPonderScenes {
     public static final ResourceLocation RUNNING_FISSION_REACTOR = MekanismPonders.id("running_fission_reactor");
 
     public static final ResourceLocation CREATING_TURBINE = MekanismPonders.id("creating_industrial_turbine");
+    public static final ResourceLocation RUNNING_TURBINE = MekanismPonders.id("running_industrial_turbine");
 
     // Only loaded if Mekanism: Generators is loaded
     public static void registerGeneratorScenes(PonderSceneRegistrationHelper<ResourceLocation> helper) {
@@ -64,6 +65,7 @@ public class MekGensPonderScenes {
                 GeneratorsBlocks.ROTATIONAL_COMPLEX.asItem(),
                 GeneratorsItems.TURBINE_BLADE.asItem()
             )
-                .addStoryBoard(CREATING_TURBINE, IndustrialTurbineScenes::creatingTurbine);
+                .addStoryBoard(CREATING_TURBINE, IndustrialTurbineScenes::creatingTurbine)
+                .addStoryBoard(RUNNING_TURBINE, IndustrialTurbineScenes::runningTurbine);
     }
 }
