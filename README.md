@@ -1,10 +1,12 @@
+<p style="text-align: center;"> Mekanism: Ponders </p>
+=======
+
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/a1qs/mekanism_ponders/d25622a79eb2e8e61d65f7db25057851ee204728/src/main/resources/mekanism_ponders.png"  alt="logo"  width="256" height="256" />
 </p>
 
-Mekanism: Ponders
-=======
+
 **Mekanism: Ponders** adds a variety of new Ponder Scenes for [Mekanism](https://www.curseforge.com/minecraft/mc-mods/mekanism) using the [Ponder](https://github.com/Creators-of-Create/Ponder) Mod!<br>
 Installing [Mekanism: Generators](https://www.curseforge.com/minecraft/mc-mods/mekanism-generators) also adds additional scenes for the Multiblocks included in that mod.
 
