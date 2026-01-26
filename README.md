@@ -1,25 +1,22 @@
 
-Installation information
+<p align="center">
+  <img src="https://raw.githubusercontent.com/a1qs/mekanism_ponders/d25622a79eb2e8e61d65f7db25057851ee204728/src/main/resources/mekanism_ponders.png"  alt="logo" style="width: 55vw; min-width: 256px;" />
+</p>
+
+Mekanism: Ponders
 =======
+**Mekanism: Ponders** adds a variety of new Ponder Scenes for [Mekanism](https://www.curseforge.com/minecraft/mc-mods/mekanism) using the [Ponder](https://github.com/Creators-of-Create/Ponder) Mod!<br>
+Installing [Mekanism: Generators](https://www.curseforge.com/minecraft/mc-mods/mekanism-generators) also adds additional scenes for the Multiblocks included in that mod.
 
-This template repository can be directly cloned to get you started with a new
-mod. Simply create a new repository cloned from this one, by following the
-instructions provided by [GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
 
-Once you have your clone, simply open the repository in the IDE of your choice. The usual recommendation for an IDE is either IntelliJ IDEA or Eclipse.
+## Dependencies
+- [Mekanism](https://www.curseforge.com/minecraft/mc-mods/mekanism)
+- [Mekanism: Generators](https://www.curseforge.com/minecraft/mc-mods/mekanism-generators) *(optional)*
 
-If at any point you are missing libraries in your IDE, or you've run into problems you can
-run `gradlew --refresh-dependencies` to refresh the local cache. `gradlew clean` to reset everything 
-{this does not affect your code} and then start the process again.
+## Notes:
+- If you find any spelling errors, have suggestions, or anything else please make an issue [here](https://github.com/a1qs/mekanism_ponders/issues).
+- Most of the rendering in the Ponder Scenes are achieved through a hacky way, due to the multiblocks/blockentities/etc. not being implemented in a way where they would just work in Ponder Scenes. However, it should *never* affect anything outside of the Ponder Scenes.
 
-Mapping Names:
-============
-By default, the MDK is configured to use the official mapping names from Mojang for methods and fields 
-in the Minecraft codebase. These names are covered by a specific license. All modders should be aware of this
-license. For the latest license text, refer to the mapping file itself, or the reference copy here:
-https://github.com/NeoForged/NeoForm/blob/main/Mojang.md
 
-Additional Resources: 
-==========
-Community Documentation: https://docs.neoforged.net/  
-NeoForged Discord: https://discord.neoforged.net/
+
+
