@@ -1,5 +1,5 @@
-<p style="text-align: center;"> Mekanism: Ponders </p>
-=======
+<h1 style="text-align: center;"> Mekanism: Ponders </h1>
+
 
 
 <p align="center">
