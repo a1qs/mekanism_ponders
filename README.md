@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/a1qs/mekanism_ponders/d25622a79eb2e8e61d65f7db25057851ee204728/src/main/resources/mekanism_ponders.png"  alt="logo" style="width: 55vw; min-width: 256px;" />
+  <img src="https://raw.githubusercontent.com/a1qs/mekanism_ponders/d25622a79eb2e8e61d65f7db25057851ee204728/src/main/resources/mekanism_ponders.png"  alt="logo"  width="256" height="256" />
 </p>
 
 Mekanism: Ponders
