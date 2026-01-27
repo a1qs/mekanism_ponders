@@ -23,10 +23,6 @@ public class MekPonderScenes {
     public static void register(PonderSceneRegistrationHelper<ResourceLocation> helper) {
         PonderSceneRegistrationHelper<Item> HELPER = helper.withKeyFunction(BuiltInRegistries.ITEM::getKey);
 
-        // TODO: add for other related components
-
-
-
         HELPER.forComponents(
                 MekanismBlocks.DYNAMIC_TANK.asItem(),
                 MekanismBlocks.DYNAMIC_VALVE.asItem()
