@@ -35,7 +35,14 @@ public class MekPonderScenes {
         HELPER.forComponents(
                 MekanismBlocks.INDUCTION_CASING.asItem(),
                 MekanismBlocks.INDUCTION_PORT.asItem(),
-                MekanismBlocks.BASIC_INDUCTION_CELL.asItem() // todo? other cells?
+                MekanismBlocks.BASIC_INDUCTION_CELL.asItem(),
+                MekanismBlocks.ADVANCED_INDUCTION_CELL.asItem(),
+                MekanismBlocks.ELITE_INDUCTION_CELL.asItem(),
+                MekanismBlocks.ULTIMATE_INDUCTION_CELL.asItem(),
+                MekanismBlocks.BASIC_INDUCTION_PROVIDER.asItem(),
+                MekanismBlocks.ADVANCED_INDUCTION_PROVIDER.asItem(),
+                MekanismBlocks.ELITE_INDUCTION_PROVIDER.asItem(),
+                MekanismBlocks.ULTIMATE_INDUCTION_PROVIDER.asItem()
         ).addStoryBoard(CREATING_INDUCTION_MATRIX, InductionMatrixScenes::creatingInductionMatrix);
 
         HELPER.forComponents(
