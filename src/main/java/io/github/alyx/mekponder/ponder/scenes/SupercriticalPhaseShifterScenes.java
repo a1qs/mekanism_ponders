@@ -4,26 +4,17 @@ import io.github.alyx.mekponder.mixin.AccessorAttributeStateActive;
 import io.github.alyx.mekponder.ponder.MekPonderScenes;
 import io.github.alyx.mekponder.ponder.element.ChemicalPonderRender;
 import io.github.alyx.mekponder.util.SceneUtil;
-import mekanism.api.MekanismAPITags;
-import mekanism.api.chemical.ChemicalStack;
-import mekanism.client.render.MekanismRenderer;
 import mekanism.common.block.attribute.Attributes;
 import mekanism.common.registries.MekanismBlocks;
 import mekanism.common.registries.MekanismChemicals;
 import mekanism.common.registries.MekanismItems;
 import mekanism.common.tile.multiblock.TileEntitySPSCasing;
-import mekanism.generators.common.tile.fusion.TileEntityFusionReactorController;
-import net.createmod.catnip.gui.element.ScreenElement;
 import net.createmod.catnip.math.Pointing;
 import net.createmod.ponder.api.PonderPalette;
 import net.createmod.ponder.api.scene.SceneBuilder;
 import net.createmod.ponder.api.scene.SceneBuildingUtil;
 import net.createmod.ponder.api.scene.Selection;
-import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.core.Direction;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.animal.Pig;
 
 public class SupercriticalPhaseShifterScenes {
 
@@ -82,7 +73,7 @@ public class SupercriticalPhaseShifterScenes {
 
         scene.overlay().showText(120)
                 .colored(PonderPalette.BLUE)
-                .text("Inner sections of the SPS can be replaced with Structural Glass, Reactor Glass, or SPS Ports.");
+                .text("Inner sections of the SPS can be replaced with Structural Glass, or SPS Ports.");
 
         scene.idle(100);
         scene.overlay().showOutline(PonderPalette.BLUE, new Object(), glass, 60);
@@ -115,7 +106,7 @@ public class SupercriticalPhaseShifterScenes {
         scene.idle(30);
         scene.overlay().showText(200)
                 .colored(PonderPalette.BLUE)
-                .text("To process Polonium, the SPS requires a Port placed in the center of one side, and on the inside of the reactor to have a Supercharged Coil placed on the Port.");
+                .text("To process Polonium, the SPS requires a Port placed in the center of one side, and on the inside of the SPS to have a Supercharged Coil placed on the Port.");
 
         scene.idle(190);
 
