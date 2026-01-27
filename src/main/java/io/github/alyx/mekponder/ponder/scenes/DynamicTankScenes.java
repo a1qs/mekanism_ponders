@@ -4,6 +4,7 @@ import io.github.alyx.mekponder.ponder.MekPonderScenes;
 import io.github.alyx.mekponder.util.SceneUtil;
 import mekanism.common.registries.MekanismBlocks;
 import mekanism.generators.common.registries.GeneratorsBlocks;
+import net.createmod.catnip.math.Pointing;
 import net.createmod.ponder.api.PonderPalette;
 import net.createmod.ponder.api.scene.SceneBuilder;
 import net.createmod.ponder.api.scene.SceneBuildingUtil;
@@ -88,7 +89,21 @@ public class DynamicTankScenes {
 
         scene.idle(185);
         scene.addKeyframe();
+        scene.idle(20);
 
+
+        scene.overlay().showText(190)
+                .text("Right clicking anywhere on the Dynamic tank opens its UI, allowing you to see the total stored amount of the Fluid or Chemical and the total Capacity that the Tank can hold.");
+        scene.idle(150);
+
+        scene.overlay().showControls(util.vector().topOf(4, 2, 1), Pointing.RIGHT, 60);
+        scene.idle(80);
+
+        scene.overlay().showText(170)
+                .text("In addition to that, it allows you to fill containers from the UI, and you can configure whether the Tank should only Fill itself, Empty itself, or both.");
+
+        scene.idle(190);
+        scene.addKeyframe();
         scene.world().hideSection(util.select().position(2, 2, 0), Direction.UP);
 
 
