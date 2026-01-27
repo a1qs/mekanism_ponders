@@ -73,7 +73,7 @@ public class SupercriticalPhaseShifterScenes {
 
         scene.overlay().showText(120)
                 .colored(PonderPalette.BLUE)
-                .text("Inner sections of the SPS can be replaced with Structural Glass, or SPS Ports.");
+                .text("Inner sections of the SPS can be replaced with Structural Glass, Reactor Glass, or SPS Ports.");
 
         scene.idle(100);
         scene.overlay().showOutline(PonderPalette.BLUE, new Object(), glass, 60);
