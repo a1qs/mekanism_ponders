@@ -16,7 +16,6 @@ import net.minecraft.core.Direction;
 import net.minecraft.world.phys.AABB;
 
 public class ThermalEvaporationPlantScenes {
-
     public static void creatingThermalEvaporationPlant(SceneBuilder scene, SceneBuildingUtil util) {
         scene.title(MekPonderScenes.CREATING_THERMAL_EVAPORATION_PLANT.getPath(), "Creating a Thermal Evaporation Plant");
         scene.showBasePlate();

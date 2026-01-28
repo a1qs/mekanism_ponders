@@ -211,16 +211,11 @@ public class InductionMatrixScenes {
 
         if (MekanismPonders.isMekGensLoaded) {
             MiscGeneratorScenes.heatGeneratorInductionMatrix(scene, util);
-       } else {
+        } else {
             scene.world().setBlock(util.grid().at(4, 2, 0), MekanismBlocks.BASIC_ENERGY_CUBE.defaultState(), false);
             scene.world().showSection(util.select().position(4, 2, 0), Direction.UP);
             scene.idle(20);
         }
-
-
-
-
-
 
         scene.overlay().showOutlineWithText(util.select().position(2, 2, 1), 80)
                 .text("In §4Output§r mode, you can extract power from the Induction Matrix.");

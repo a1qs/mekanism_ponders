@@ -1,7 +1,6 @@
 package io.github.alyx.mekponder.datagen;
 
 import io.github.alyx.mekponder.MekanismPonders;
-
 import io.github.alyx.mekponder.ponder.MekPonderScenes;
 import io.github.alyx.mekponder.ponder.generators.MekGensPonderScenes;
 import net.minecraft.data.PackOutput;
@@ -254,7 +253,6 @@ public class MekPonderLanguageProvider extends LanguageProvider {
         addPonderHeader(ponder, header);
         addPonderTranslationText(ponder, text);
     }
-
 
     private void addPonderTranslationText(ResourceLocation ponder, String... text) {
         for (int i = 0; i < text.length; i++) {

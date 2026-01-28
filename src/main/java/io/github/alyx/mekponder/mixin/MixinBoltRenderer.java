@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.ModifyVariable;
 @Mixin(value = BoltRenderer.class, remap = false)
 public abstract class MixinBoltRenderer {
 
-    // yeah this is kind of hacky, bu
+    // yeah this is kind of hacky, but surely it's fine
     @ModifyVariable(method = "render(FLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;Lnet/minecraft/world/phys/Vec3;)V", at = @At(value = "STORE"), ordinal = 0)
     private BoltRenderer.Timestamp replaceTimestampRender(BoltRenderer.Timestamp timestamp, float partialTicks) {
         if (Minecraft.getInstance().screen instanceof PonderUI) {

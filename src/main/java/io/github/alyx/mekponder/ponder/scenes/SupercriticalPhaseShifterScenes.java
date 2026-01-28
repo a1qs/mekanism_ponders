@@ -19,9 +19,6 @@ import net.minecraft.core.Direction;
 import net.minecraft.world.item.ItemStack;
 
 public class SupercriticalPhaseShifterScenes {
-
-
-    // RenderSPS
     public static void creatingSPS(SceneBuilder scene, SceneBuildingUtil util) {
         scene.title(MekPonderScenes.CREATING_SPS.getPath(), "Creating a Supercritical Phase Shifter");
         scene.showBasePlate();
@@ -197,15 +194,4 @@ public class SupercriticalPhaseShifterScenes {
 
         scene.idle(60);
     }
-
-
-
-
-    /*
-     *
-     *
-     *
-     * By right clicking anywhere on the SPS, you can open the UI for it and see the Status of the SPS, the Energy Input, the Process Rate, the Progress, as well as its 2 internal tanks for
-     * Polonium and Antimatter
-     */
 }

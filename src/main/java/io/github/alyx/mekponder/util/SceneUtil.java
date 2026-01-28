@@ -1,16 +1,11 @@
 package io.github.alyx.mekponder.util;
 
-import net.createmod.catnip.math.VecHelper;
 import net.createmod.catnip.theme.Color;
 import net.createmod.ponder.Ponder;
 import net.createmod.ponder.api.ParticleEmitter;
-import net.createmod.ponder.api.scene.EffectInstructions;
-import net.createmod.ponder.api.scene.PositionUtil;
 import net.createmod.ponder.api.scene.SceneBuilder;
-import net.createmod.ponder.api.scene.SceneBuildingUtil;
 import net.createmod.ponder.foundation.instruction.EmitParticlesInstruction;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Vec3i;
 import net.minecraft.core.particles.DustParticleOptions;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.world.level.block.state.properties.Property;

@@ -1,8 +1,8 @@
 package io.github.alyx.mekponder.ponder.generators.scenes;
 
-import io.github.alyx.mekponder.ponder.generators.MekGensPonderScenes;
 import io.github.alyx.mekponder.ponder.element.ChemicalPonderRender;
 import io.github.alyx.mekponder.ponder.element.FluidPonderRender;
+import io.github.alyx.mekponder.ponder.generators.MekGensPonderScenes;
 import io.github.alyx.mekponder.util.SceneUtil;
 import mekanism.api.chemical.ChemicalStack;
 import mekanism.common.registries.MekanismBlocks;
@@ -25,7 +25,6 @@ import net.minecraft.world.phys.AABB;
 import net.neoforged.neoforge.fluids.FluidStack;
 
 public class FissionReactorScenes {
-
 
     public static void creatingFissionReactor(SceneBuilder scene, SceneBuildingUtil util) {
         scene.title(MekGensPonderScenes.CREATING_FISSION_REACTOR.getPath(), "Creating a Fission Reactor");
@@ -427,6 +426,5 @@ public class FissionReactorScenes {
                 .text("Once it's beyond 100%, each tick has a chance that the reactor will explode, while it is above 100%.");
 
         scene.idle(160);
-
     }
 }

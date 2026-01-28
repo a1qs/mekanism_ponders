@@ -9,12 +9,9 @@ import mekanism.api.chemical.ChemicalStack;
 import mekanism.common.block.attribute.AttributeStateActive;
 import mekanism.common.block.attribute.Attributes;
 import mekanism.common.particle.LaserParticleData;
-import mekanism.common.registries.MekanismChemicals;
 import mekanism.common.registries.MekanismItems;
-import mekanism.common.util.ChemicalUtil;
 import mekanism.generators.common.registries.GeneratorsBlocks;
 import mekanism.generators.common.registries.GeneratorsChemicals;
-import mekanism.generators.common.registries.GeneratorsFluids;
 import mekanism.generators.common.registries.GeneratorsItems;
 import mekanism.generators.common.tile.fusion.TileEntityFusionReactorController;
 import net.createmod.catnip.math.Pointing;
@@ -359,6 +356,5 @@ public class FusionReactorScenes {
         scene.overlay().showText(150)
                 .text("However, when using §5D-T Fuel§r, the Reactor ignores the configured Injection Rate, and instead attempts to use §61000§rmb/t at all times.");
         scene.idle(160);
-
     }
 }

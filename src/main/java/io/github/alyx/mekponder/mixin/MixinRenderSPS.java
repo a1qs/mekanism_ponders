@@ -9,7 +9,6 @@ import mekanism.common.lib.effect.BoltEffect;
 import mekanism.common.lib.math.Plane;
 import mekanism.common.lib.math.voxel.VoxelCuboid;
 import mekanism.common.tile.multiblock.TileEntitySPSCasing;
-import net.createmod.ponder.api.level.PonderLevel;
 import net.minecraft.Util;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.core.BlockPos;
@@ -32,13 +31,12 @@ import java.util.UUID;
 public abstract class MixinRenderSPS {
 
     @Shadow @Final private static Map<UUID, BoltRenderer> boltRendererMap;
+    @Shadow @Final private static RandomSource rand;
 
     @Shadow
     private static BoltEffect getBoltFromData(SPSMultiblockData.CoilData data, BlockPos pos, Vec3 center) {
         return null;
     }
-
-    @Shadow @Final private static RandomSource rand;
 
     @Shadow
     private static float getBoundedScale(float scale, float min, float max) {
@@ -58,8 +56,6 @@ public abstract class MixinRenderSPS {
                 }
 
                 BoltRenderer bolts = boltRendererMap.computeIfAbsent(multiblock.inventoryID, mb -> new BoltRenderer());
-                Vec3 center = Vec3.atLowerCornerOf(new Vec3i(1, 1, 1)).add(Vec3.atLowerCornerOf(new Vec3i(7, 7, 7)))
-                        .add(new Vec3(1, 1, 1)).scale(0.5);
                 Vec3 renderCenter = new Vec3(-0.5, 3, 1.5);
 
                 for (SPSMultiblockData.CoilData data : multiblock.coilData.coilMap.values()) {
@@ -69,8 +65,6 @@ public abstract class MixinRenderSPS {
                 }
 
                 float energyScale = 1;
-                int targetEffectCount = 0;
-
 
                 if (rand.nextDouble() < getBoundedScale(energyScale, 0.01F, 0.4F)) {
                     VoxelCuboid.CuboidSide side = Util.getRandom(VoxelCuboid.CuboidSide.SIDES, rand);
@@ -87,7 +81,6 @@ public abstract class MixinRenderSPS {
 
                 bolts.render(partialTick, matrix, renderer);
             }
-
             ci.cancel();
         }
     }

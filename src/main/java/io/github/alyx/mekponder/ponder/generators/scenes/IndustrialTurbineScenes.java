@@ -6,7 +6,6 @@ import io.github.alyx.mekponder.util.SceneUtil;
 import mekanism.api.chemical.ChemicalStack;
 import mekanism.common.registries.MekanismBlocks;
 import mekanism.common.registries.MekanismChemicals;
-import mekanism.common.registries.MekanismItems;
 import mekanism.generators.common.registries.GeneratorsBlocks;
 import mekanism.generators.common.registries.GeneratorsItems;
 import net.createmod.catnip.math.Pointing;
@@ -19,7 +18,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.AABB;
 
 public class IndustrialTurbineScenes {
-
     // TODO: Turbine blade shenanigans
     public static void creatingTurbine(SceneBuilder scene, SceneBuildingUtil util) {
         scene.title(MekGensPonderScenes.CREATING_TURBINE.getPath(), "Creating an Industrial Turbine");

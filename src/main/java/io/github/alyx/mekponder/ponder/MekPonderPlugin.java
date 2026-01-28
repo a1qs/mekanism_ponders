@@ -28,6 +28,4 @@ public class MekPonderPlugin implements PonderPlugin {
     public void registerTags(@NotNull PonderTagRegistrationHelper<ResourceLocation> helper) {
         PonderPlugin.super.registerTags(helper);
     }
-
-
 }

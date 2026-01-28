@@ -1,13 +1,10 @@
 package io.github.alyx.mekponder.ponder.scenes;
 
-import io.github.alyx.mekponder.MekanismPonders;
-import io.github.alyx.mekponder.mixin.AccessorAttributeStateActive;
 import io.github.alyx.mekponder.ponder.MekPonderScenes;
 import io.github.alyx.mekponder.ponder.element.ChemicalPonderRender;
 import io.github.alyx.mekponder.util.SceneUtil;
 import mekanism.api.chemical.ChemicalStack;
 import mekanism.common.block.attribute.AttributeStateBoilerValveMode;
-import mekanism.common.block.attribute.Attributes;
 import mekanism.common.registries.MekanismBlocks;
 import mekanism.common.registries.MekanismChemicals;
 import mekanism.common.registries.MekanismItems;
@@ -18,7 +15,6 @@ import net.createmod.ponder.api.scene.SceneBuildingUtil;
 import net.createmod.ponder.api.scene.Selection;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.phys.AABB;
 
 public class ThermoelectricBoilerScenes {
@@ -256,15 +252,4 @@ public class ThermoelectricBoilerScenes {
 
         scene.idle(90);
     }
-
-    /*
-     *
-     *
-     * ...
-     *
-     *
-     *
-     *
-     *
-     */
 }

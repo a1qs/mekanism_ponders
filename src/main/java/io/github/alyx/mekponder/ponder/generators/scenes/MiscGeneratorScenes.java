@@ -11,8 +11,6 @@ import net.createmod.ponder.api.scene.SceneBuilder;
 import net.createmod.ponder.api.scene.SceneBuildingUtil;
 import net.createmod.ponder.api.scene.Selection;
 import net.minecraft.core.Direction;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
 
 /**
  *  Can only load things from MekGens if the mod is loaded, so we have this class to only load if the mod is installed, adding extra bits and bobs for
@@ -57,5 +55,4 @@ public class MiscGeneratorScenes {
         scene.world().cycleBlockProperty(util.grid().at(4, 2, 0), ((AccessorAttributeStateActive) Attributes.ACTIVE).mekanism_ponder$getActiveProperty());
         scene.idle(20);
     }
-
 }

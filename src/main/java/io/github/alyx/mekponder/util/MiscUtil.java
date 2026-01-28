@@ -8,7 +8,6 @@ import net.minecraft.world.level.Level;
 import java.util.Optional;
 
 public class MiscUtil {
-
     public static Optional<PonderUI> getCurrentPonderUI() {
         if (Minecraft.getInstance().screen instanceof PonderUI ui) {
             return Optional.of(ui);

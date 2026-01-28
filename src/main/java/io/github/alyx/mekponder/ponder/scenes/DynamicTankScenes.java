@@ -12,8 +12,6 @@ import net.minecraft.core.Direction;
 import net.minecraft.world.phys.AABB;
 
 public class DynamicTankScenes {
-
-
     public static void creatingDynamicTank(SceneBuilder scene, SceneBuildingUtil util) {
         scene.title(MekPonderScenes.CREATING_DYNAMIC_TANK.getPath(), "Creating a Dynamic Tank Multiblock");
         scene.showBasePlate();

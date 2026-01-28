@@ -9,6 +9,4 @@ import org.spongepowered.asm.mixin.gen.Invoker;
 public interface InvokerPonderUI {
     @Invoker("getActiveScene")
     PonderScene mekanism_ponder$invokeGetActiveScene();
-
-
 }

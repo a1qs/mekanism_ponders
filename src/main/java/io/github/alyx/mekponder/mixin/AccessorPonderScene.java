@@ -6,7 +6,6 @@ import org.spongepowered.asm.mixin.gen.Accessor;
 
 @Mixin(value = PonderScene.class, remap = false)
 public interface AccessorPonderScene {
-
     @Accessor("camera")
     PonderScene.SceneCamera mekanism_ponder$getCamera();
 }
