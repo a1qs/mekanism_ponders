@@ -12,7 +12,6 @@ import net.neoforged.fml.ModContainer;
 
 
 // TODO: Figure out Energy Cube and transmitter logic
-// TODO: Seperate Stuff from MekGens and only load if mekgens is loaded (e.g reactor glass, heat generator)
 @Mod(MekanismPonders.MODID)
 public class MekanismPonders {
     public static final String MODID = "mekanism_ponders";

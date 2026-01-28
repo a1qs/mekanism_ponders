@@ -1,6 +1,9 @@
 package io.github.alyx.mekponder.ponder.generators.scenes;
 
 
+import io.github.alyx.mekponder.mixin.AccessorAttributeStateActive;
+import mekanism.common.block.attribute.Attribute;
+import mekanism.common.block.attribute.Attributes;
 import mekanism.common.registries.MekanismBlocks;
 import mekanism.generators.common.registries.GeneratorsBlocks;
 import net.createmod.ponder.api.PonderPalette;
@@ -8,6 +11,8 @@ import net.createmod.ponder.api.scene.SceneBuilder;
 import net.createmod.ponder.api.scene.SceneBuildingUtil;
 import net.createmod.ponder.api.scene.Selection;
 import net.minecraft.core.Direction;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
 
 /**
  *  Can only load things from MekGens if the mod is loaded, so we have this class to only load if the mod is installed, adding extra bits and bobs for
@@ -42,4 +47,15 @@ public class MiscGeneratorScenes {
         scene.world().showSection(solarPanels, Direction.DOWN);
         scene.idle(30);
     }
+
+    public static void heatGeneratorInductionMatrix(SceneBuilder scene, SceneBuildingUtil util) {
+        scene.world().setBlock(util.grid().at(4, 2, 0), GeneratorsBlocks.HEAT_GENERATOR.defaultState(), false);
+        scene.world().modifyBlock(util.grid().at(4, 2, 0), a -> Attribute.setFacing(a, Direction.SOUTH), false);
+        scene.world().showSection(util.select().position(4, 2, 0), Direction.UP);
+
+        scene.idle(30);
+        scene.world().cycleBlockProperty(util.grid().at(4, 2, 0), ((AccessorAttributeStateActive) Attributes.ACTIVE).mekanism_ponder$getActiveProperty());
+        scene.idle(20);
+    }
+
 }

@@ -1,7 +1,9 @@
 package io.github.alyx.mekponder.ponder.scenes;
 
+import io.github.alyx.mekponder.MekanismPonders;
 import io.github.alyx.mekponder.mixin.AccessorAttributeStateActive;
 import io.github.alyx.mekponder.ponder.MekPonderScenes;
+import io.github.alyx.mekponder.ponder.generators.scenes.MiscGeneratorScenes;
 import io.github.alyx.mekponder.util.SceneUtil;
 import mekanism.common.block.attribute.Attributes;
 import mekanism.common.registries.MekanismBlocks;
@@ -206,13 +208,19 @@ public class InductionMatrixScenes {
 
         scene.idle(70);
 
-        scene.world().showSection(util.select().position(4, 2, 0), Direction.UP);
-        scene.idle(20);
+        if (MekanismPonders.isMekGensLoaded) {
+            MiscGeneratorScenes.heatGeneratorInductionMatrix(scene, util);
+       } else {
+            scene.world().setBlock(util.grid().at(4, 2, 0), MekanismBlocks.BASIC_ENERGY_CUBE.defaultState(), false);
+            scene.world().showSection(util.select().position(4, 2, 0), Direction.UP);
+            scene.idle(20);
+        }
 
-        scene.world().cycleBlockProperty(util.grid().at(4, 2, 0), ((AccessorAttributeStateActive) Attributes.ACTIVE).mekanism_ponder$getActiveProperty());
 
-        scene.idle(30);
 
+
+
+        
         scene.overlay().showOutlineWithText(util.select().position(2, 2, 1), 80)
                 .text("In §4Output§r mode, you can extract power from the Induction Matrix.");
 
