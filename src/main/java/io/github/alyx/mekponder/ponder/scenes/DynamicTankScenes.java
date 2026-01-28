@@ -96,7 +96,8 @@ public class DynamicTankScenes {
                 .text("Right clicking anywhere on the Dynamic tank opens its UI, allowing you to see the total stored amount of the Fluid or Chemical and the total Capacity that the Tank can hold.");
         scene.idle(150);
 
-        scene.overlay().showControls(util.vector().topOf(4, 2, 1), Pointing.RIGHT, 60);
+        scene.overlay().showControls(util.vector().topOf(4, 2, 1), Pointing.RIGHT, 60)
+                .rightClick();
         scene.idle(80);
 
         scene.overlay().showText(170)
