@@ -212,7 +212,7 @@ public class IndustrialTurbineScenes {
         scene.idle(20);
         scene.overlay().showOutlineWithText(util.select().fromTo(2, 7, 2, 4, 7, 4).substract(util.select().fromTo(4, 7, 3, 3, 7, 3)), 120)
                 .colored(PonderPalette.BLUE)
-                .text("If Saturating Condensers are used, Water can be extracted through the Turbine Vents");
+                .text("If Saturating Condensers are used, Water can be extracted through the Turbine Vents.");
 
         scene.idle(140);
         scene.world().showSection(util.select().layer(8), Direction.DOWN);

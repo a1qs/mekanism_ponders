@@ -15,6 +15,61 @@ public class MekPonderLanguageProvider extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
+
+        // Fission Scenes
+        addPonderTranslation(
+                MekGensPonderScenes.CREATING_FISSION_REACTOR,
+                "Creating a Fission Reactor",
+
+                "The Fission Reactor is a multiblock capable of processing Fissile Fuel into Nuclear Waste.",
+                "It's a cuboid structure and can range from 3x4x3 up to 18x18x18,\nand uses Fission Reactor Casings for its frame.",
+                "The inner sections of the frame can be replaced with Reactor Glass, Fission Reactor Ports or Fission Reactor Logic Adapters.",
+                "Inside the Reactor, Fission Control Rods need to be added, which are built with one or more Fission Fuel Assemblies and a single Control Rod Assembly on top of them.",
+                "The cooling of the Reactor is penalized if Control Rods touch eachother.",
+                "Once fully constructed, it will emit Redstone Particles to indicate its completion."
+        );
+
+        addPonderTranslation(
+                MekGensPonderScenes.CONFIGURING_FISSION_REACTOR,
+                "Configuring a Fission Reactor",
+
+                "Fission Reactor Ports are used to interact with the Fission Reactor.",
+                "Fission Reactor Ports have 3 different modes they can switch between.",
+                "To switch between modes, you can use a Configurator on the port by shift-right-clicking the port.",
+                "Input Only:\n\nThe port will exclusively accept Fluids and Chemicals.",
+                "Output Waste:\n\nThe port will exclusively output Nuclear Waste produced by the Reactor.",
+                "Output Coolant:\n\nThe port will exclusively output Heated Coolant produced by the Reactor.",
+                "The Fission Reactor Logic Adapter can be used to control the reactor with a Redstone Signal,\nor emit a Redstone Signal based on the Reactor State.\n\nThis can help to create fail-safe mechanisms for the reactor.",
+                "Logic Adapter is set to Activation.\n\nThe reactor is now running.",
+                "Logic Adapter is set to Insufficient Fuel.\n\nA Redstone signal is being outputted.",
+                "The Fission Reactor has an UI that can be accessed by clicking anywhere on its completed structure.",
+                "Within the main tab, you can see:\n- its Status\n- its current configured Burn Rate\n- the Heating Rate\n- the current Temperature\n- and the Damage percentage it has sustained.",
+                "In addition to that, it has a buttons to activate and deactivate the reactor.",
+                "In the Fission Reactor Statistics tab, you can see:\n- Heat Statistic\n- Fuel Statistics\n- as well as being able to set the Current Burn Rate."
+        );
+
+        addPonderTranslation(
+                MekGensPonderScenes.COOLING_FISSION_REACTOR,
+                "Cooling a Fission Reactor",
+
+                "The Fission Reactor can be cooled in two ways.",
+                "1. Water cooling\n\nWater cooling the reactor produces steam. The reactor uses 20,000mB/t of Water per mB of Burn Rate.\n\nSteam can be used in a Turbine to gain energy, and can also be used to recycle the steam back into Water using Saturating Condensers.",
+                "2. Sodium cooling\n\nSodium cooling the reactor produces Superheated Sodium.\nSuperheated Sodium can be used create Steam in a Thermoelectric Boiler, as well returning the heated Sodium to a cooled state, where it can be used as a coolant again.",
+                "This method uses 200.000mB/t of Sodium per mB of Burn Rate, however provides double the cooling capacity that Water provides\n\n This allows the reactor able to handle double the Burn Rate it could with Water."
+        );
+
+        addPonderTranslation(
+                MekGensPonderScenes.RUNNING_FISSION_REACTOR,
+                "Running a Fission Reactor",
+
+                "By providing Fission Fuel, the reactor can be activated, and will produce Nuclear Waste every tick correlating to the Burn Rate set for the Reactor.",
+                "Nuclear Waste is radioactive, meaning that it cannot be stored in normal Chemical Tanks.\nRadioactive Waste Barrels can be used, which will dissapate the waste stored.",
+                "While running, the reactor produces heat and can consume Coolant to cool itself down, producing Steam or Superheated Sodium in the process.",
+                "If the temperature reaches levels beyond 1200K the reactor will increase its damage percentage.",
+                "Once it's beyond 100%, each tick has a chance that the reactor will explode, while it is above 100%."
+        );
+
+        // Fusion Scenes
         addPonderTranslation(
                 MekGensPonderScenes.CONSTRUCTING_FUSION_REACTOR,
                 "Constructing a Fusion Reactor",
@@ -62,6 +117,41 @@ public class MekPonderLanguageProvider extends LanguageProvider {
                 "However, when using §5D-T Fuel§r, the Reactor ignores the configured Injection Rate, and instead attempts to use §61000§rmb/t at all times."
         );
 
+
+        // Industrial Turbine Scenes
+        addPonderTranslation(
+                MekGensPonderScenes.CREATING_TURBINE,
+                "Creating an Industrial Turbine",
+
+                "The Industrial Turbine is a Multiblock, capable of generating large amounts of energy using Steam.",
+                "Its structure is made out of Turbine Casings and can range from sizes 5x5x5 up to 17x18x17 with an odd diameter.",
+                "Inner sections of the structure can be replaced with Structural Glass or Turbine Valves.",
+                "The Turbine requires Turbine Rotors in the center column of the Structure, with a Rotational Complex on top of it.",
+                "Turbine Blades are needed on the Turbine Rotors, which are applied by right-clicking, but cannot exceed the the interior width of the structure.",
+                "The inner layer of the Rotational Complex must be filled with Pressure Dispersers.",
+                "Electromagnetic Coils need to be placed on top of the Rotational complex and must connect to eachother.\n\nEach coil allows for 4 Turbine Blades to be added to the Turbine.",
+                "Optionally, Saturating Condensers can be added to recycle the processed Steam back into water.",
+                "The inner structure starting from the Rotational Complex layer can be replaced with Turbine Vents, allowing for higher Flow Rate.",
+                "Once properly built, it will emit Redstone Particles to indicate its completion."
+
+        );
+
+        addPonderTranslation(
+                MekGensPonderScenes.RUNNING_TURBINE,
+                "Running an Industrial Turbine",
+
+                "The Industrial Turbine requires Steam to produce energy.",
+                "Steam can be provided through Turbine Valves, while Energy can be extracted from them.",
+                "If Saturating Condensers are used, Water can be extracted through the Turbine Vents.",
+                "Right clicking the Industrial Turbine opens its UI, displaying a variety of statistics.",
+                "The main menu shows:\n- The internal steam tank\n- Energy production\n- The amount of Steam inserted every tick\n- Its total Steam capacity\n- and its maximum steam processing rate.",
+                "In addition to that, it has a button allowing you to dump either excess Steam, or all Steam inserted into the Turbine.",
+                "While dumping steam, Water will not be recycled.",
+                "The Turbine statistics menu shows the maximum energy production, water output and structure statistics.",
+                "Furthermore, it shows which parts of the turbine are currently a limiting factor."
+        );
+
+        // Dynamic Tank Scenes
         addPonderTranslation(
                 MekPonderScenes.CREATING_DYNAMIC_TANK,
                 "Creating a Dynamic Tank Multiblock",
@@ -76,6 +166,87 @@ public class MekPonderLanguageProvider extends LanguageProvider {
                 "To insert/extract Fluids or Chemicals, a Dynamic Valve can be used.",
                 "Simply connect a transmitter of your choosing to the valve.",
                 "To extract Fluids or Chemicals, the given transmitter must be set to pull from the valve."
+        );
+
+
+        // Induction Matrix Scenes
+        addPonderTranslation(
+                MekPonderScenes.CREATING_INDUCTION_MATRIX,
+                "Creating an Induction Matrix",
+
+                "The Induction Matrix is a Multiblock, capable of storing large amounts of energy.",
+                "Building an Induction Matrix requires Induction Casings.",
+                "It's a cuboid structure and its size can range from 3x3x3, to 18x18x18",
+                "Inner sections can be replaced by either §6Structural Glass§r, §6Reactor Glass§r, or §6Induction Ports§r.",
+                "Once constructed, the structure will emit Redstone particles to indicate its completion.",
+                "For the Induction Matrix to store power, it requires an Induction Cell of any tier.",
+                "Each Induction Cell provides the Induction Matrix with more total Capacity.",
+                "To insert and extract any power out of the Induction Matrix, it needs an Induction Provider.",
+                "Induction Providers allow you to add transfer Capacity to the Induction Matrix.",
+                "The Induction Matrix has a UI, accessible by clicking anywhere on it while it's assembled.",
+                "The UI provides information about the §6current amount of power stored§r, the §6total capacity§r, as well as the amount of energy being §6inserted§r and §6outputtedg§r.",
+                "The transfer mode of a Induction Port can be configured using a Configurator.\n\nThis can toggle the port to either §4Output§r or §aInput§r mode.",
+                "In §aInput§r mode, it is able to receive power from any source.",
+                "In §4Output§r mode, you can extract power from the Induction Matrix."
+        );
+
+        // SPS Scenes
+        addPonderTranslation(
+                MekPonderScenes.CREATING_SPS,
+                "Creating a Supercritical Phase Shifter",
+
+                "The Supercritical Phase Shifter is a multiblock capable of converting Polonium into Antimatter by using large amounts of energy.",
+                "Each side of the SPS is built in the same spherical way, with a fixed size of 7x7x7.",
+                "Inner sections of the SPS can be replaced with Structural Glass, Reactor Glass, or SPS Ports.",
+                "Once completed, the Multiblock will emit Redstone Particles to indicate its completion.",
+                "To process Polonium, the SPS requires a Port placed in the center of one side, and on the inside of the SPS to have a Supercharged Coil placed on the Port.",
+                "Each Port can accept up to 400MFE/t, which can produce 1mb of Antimatter per tick,\nwith the SPS being capped at producing 2mB of Antimatter per tick.",
+                "The SPS will still use all the energy provided to it even if it doesnt have the required polonium to process antimatter at the highest speed.",
+                "SPS Ports can be used to insert Energy and Polonium into the SPS.",
+                "To extract Antimatter, the SPS Port mode needs to be switched to Output.",
+                "By right clicking anywhere on the SPS, you can open the UI for it and see: \n- the Status of the SPS\n- the Energy Input,\n- the Process Rate,\n- the Progress,\n- as well as its 2 internal tanks for Polonium and Antimatter."
+        );
+
+        // TEP Scenes
+        addPonderTranslation(
+                MekPonderScenes.CREATING_THERMAL_EVAPORATION_PLANT,
+                "Creating a Thermal Evaporation Plant",
+
+                "The Thermal Evaporation Plant is a Multiblock capable of converting §6Water into Brine§r and §6Brine into§r §6Lithium§r.",
+                "Its size can range from 4x3x4, up to 4x18x4",
+                "Inner sections of the Multiblock can be replaced with §6Thermal§r §6Evaporation Valves§r and §6Structural§r §6Glass§r.",
+                "Each Thermal Evaporation Plant requires a Thermal Evaporation Controller placed in its inner section.",
+                "Once constructed, the Multiblock will emit Redstone particles to indicate its completion.",
+                "The Thermal Evaporation Plant requires §6heat§r to function, with more heat also §6increasing the§r §6processing speed§r.",
+                "Heat can be supplied through external means by using Thermal Evaporation Valves.",
+                "The §6higher§r the Multiblock, the larger the §6capacity of internal§r §6tanks§r and §6maximum processing§r §6speed§r.\nIn addition to that, the heat required also rises.",
+                "To insert fluid, any fluid transmitter can be connected to the Thermal Evaporation Valve.",
+                "To extract Fluids, the fluid transmitter must be set to pull from the Thermal Evaporation Valve.",
+                "Right Clicking the controller opens an UI providing information about:\n\n- whether the structure is §6formed§r\n- the §6height§r\n- the §6temperature§r\n- and the §6production rate§r in ticks.",
+                "In addition to that, it provides slots to insert Fluid Handling items such as buckets or tanks, in order to extract from the internal fluid tanks.",
+                "Optionally, Advanced Solar Generators can be used to increase the heat when they are able to generate energy."
+        );
+
+        // Boiler Scenes
+        addPonderTranslation(
+                MekPonderScenes.CREATING_THERMOELECTIC_BOILER,
+                "Creating a Thermoelectric Boiler",
+
+                "The Thermoelectric Boiler is a multiblock capable of producing large amounts of steam.",
+                "It can be used to boil water into steam, or cool superheated sodium back down to sodium, using water and producing steam in the process.",
+                "Its structure is made out of Boiler Casings.",
+                "Its structure can range from 3x4x3 up to 18x18x18.",
+                "Inner sections can be replaced with Structural Glass, Reactor Glass, or Boiler Valves",
+                "Each Boiler requires Superheating Elements in its inner bottom layer section. All Superheating elements must be connected to eachother.\n\nEach layer adds to the total Water capacity.",
+                "The layer with the Superheating Elements must be seperated by a layer made out of Pressure Dispersers.",
+                "Above the layer of Pressure dispersers, you can leave additional layers to increase the capacity of the Steam layer.",
+                "Once constructed, the Multiblock will emit Redstone particles to indicate its completion.",
+                "Right clicking the Boiler anywhere opens its UI, allowing you to view its internal tanks and information about its status.",
+                "The Boiler statistics screen shows various information about the Thermoelectric Boiler, including its Boil Capacity.",
+                "Boiler Valves have 3 different configurations, which can be switched by using a Configurator on the Boiler Valve.",
+                "1. Input Only\n\nThe Valve will only accept fluids, chemicals and heat.",
+                "2. Output Steam\n\nThe Valve will only output Steam.",
+                "3. Output Coolant\n\nThe valve will only output Coolant stored in its internal tank."
         );
     }
 

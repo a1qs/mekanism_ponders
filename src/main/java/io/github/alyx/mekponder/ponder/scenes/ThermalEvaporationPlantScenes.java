@@ -105,11 +105,7 @@ public class ThermalEvaporationPlantScenes {
                 .pointAt(util.vector().of(3.5, 2.5, 0.5))
                 .text("Heat can be supplied through external means by using Thermal Evaporation Valves.");
 
-        scene.idle(115);
-
-        if (MekanismPonders.isMekGensLoaded) {
-            MiscGeneratorScenes.solarPanelsThermalEvaporationPlant(scene, util);
-        }
+        scene.idle(120);
 
         scene.world().setBlocks(moreTEP, MekanismBlocks.THERMAL_EVAPORATION_BLOCK.defaultState(), false);
         scene.overlay().showText(140)
@@ -162,6 +158,10 @@ public class ThermalEvaporationPlantScenes {
                 .colored(PonderPalette.BLUE)
                 .text("In addition to that, it provides slots to insert Fluid Handling items such as buckets or tanks, in order to extract from the internal fluid tanks.");
 
-        scene.idle(170);
+        scene.idle(180);
+
+        if (MekanismPonders.isMekGensLoaded) {
+            MiscGeneratorScenes.solarPanelsThermalEvaporationPlant(scene, util);
+        }
     }
 }
