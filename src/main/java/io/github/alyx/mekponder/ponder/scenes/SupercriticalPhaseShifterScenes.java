@@ -4,6 +4,7 @@ import io.github.alyx.mekponder.mixin.AccessorAttributeStateActive;
 import io.github.alyx.mekponder.ponder.MekPonderScenes;
 import io.github.alyx.mekponder.ponder.element.ChemicalPonderRender;
 import io.github.alyx.mekponder.util.SceneUtil;
+import mekanism.api.chemical.ChemicalStack;
 import mekanism.common.block.attribute.Attributes;
 import mekanism.common.registries.MekanismBlocks;
 import mekanism.common.registries.MekanismChemicals;
@@ -15,6 +16,7 @@ import net.createmod.ponder.api.scene.SceneBuilder;
 import net.createmod.ponder.api.scene.SceneBuildingUtil;
 import net.createmod.ponder.api.scene.Selection;
 import net.minecraft.core.Direction;
+import net.minecraft.world.item.ItemStack;
 
 public class SupercriticalPhaseShifterScenes {
 
@@ -152,7 +154,7 @@ public class SupercriticalPhaseShifterScenes {
         scene.idle(40);
 
         scene.overlay().showControls(util.vector().centerOf(util.grid().at(5, 2, 0)), Pointing.RIGHT, 40)
-                .showing(new ChemicalPonderRender(MekanismChemicals.POLONIUM.getStack(1000)));
+                .showing(new ChemicalPonderRender(new ChemicalStack(MekanismChemicals.POLONIUM, 1000)));
 
         scene.idle(60);
 
@@ -165,7 +167,7 @@ public class SupercriticalPhaseShifterScenes {
         scene.overlay().showControls(util.vector().blockSurface(util.grid().at(3, 2, 1), Direction.WEST), Pointing.LEFT, 60)
                 .rightClick()
                 .whileSneaking()
-                .withItem(MekanismItems.CONFIGURATOR.getItemStack());
+                .withItem(new ItemStack(MekanismItems.CONFIGURATOR.asItem(), 1));
 
         scene.idle(10);
 
@@ -177,7 +179,7 @@ public class SupercriticalPhaseShifterScenes {
         scene.idle(20);
 
         scene.overlay().showControls(util.vector().centerOf(util.grid().at(3, 2, 0)), Pointing.RIGHT, 40)
-                .showing(new ChemicalPonderRender(MekanismChemicals.ANTIMATTER.getStack(1000)));
+                .showing(new ChemicalPonderRender(new ChemicalStack(MekanismChemicals.ANTIMATTER, 1000)));
 
         scene.idle(60);
 

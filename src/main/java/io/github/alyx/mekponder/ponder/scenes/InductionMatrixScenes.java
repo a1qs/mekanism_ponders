@@ -16,6 +16,7 @@ import net.createmod.ponder.api.scene.SceneBuildingUtil;
 import net.createmod.ponder.api.scene.Selection;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Vec3i;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.AABB;
 
 public class InductionMatrixScenes {
@@ -197,7 +198,7 @@ public class InductionMatrixScenes {
         scene.overlay().showControls(util.vector().blockSurface(util.grid().at(2, 2, 1), Direction.WEST), Pointing.LEFT, 60)
                 .rightClick()
                 .whileSneaking()
-                .withItem(MekanismItems.CONFIGURATOR.getItemStack());
+                .withItem(new ItemStack(MekanismItems.CONFIGURATOR.asItem(), 1));
 
         scene.idle(40);
         SceneUtil.loopBlockProperty(scene, util.grid().at(2, 2, 1), ((AccessorAttributeStateActive) Attributes.ACTIVE).mekanism_ponder$getActiveProperty(), 3, 12);
@@ -220,7 +221,7 @@ public class InductionMatrixScenes {
 
 
 
-        
+
         scene.overlay().showOutlineWithText(util.select().position(2, 2, 1), 80)
                 .text("In §4Output§r mode, you can extract power from the Induction Matrix.");
 

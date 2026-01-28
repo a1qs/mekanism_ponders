@@ -56,3 +56,10 @@ config="${mod_id}.mixins.json"
     versionRange="[10.7.9,)" #mandatory
     ordering="AFTER"
     side="BOTH"
+
+[[dependencies."${mod_id}"]]
+    modId = "flywheel"
+    type = "required"
+    versionRange = "${flywheel_version_range}"
+    ordering = "AFTER"
+    side = "CLIENT"

@@ -13,7 +13,8 @@ public class ChemicalPonderRender implements ScreenElement {
 
     public ChemicalPonderRender(ChemicalStack stack) {
         this.stack = stack;
-        this.sprite = MekanismRenderer.getChemicalTexture(stack.getChemical());
+        //this.sprite = MekanismRenderer.getChemicalTexture(stack.getChemical()); // Requires newer version of mek
+        this.sprite = MekanismRenderer.getSprite(stack.getChemical().getIcon());
     }
 
     @Override

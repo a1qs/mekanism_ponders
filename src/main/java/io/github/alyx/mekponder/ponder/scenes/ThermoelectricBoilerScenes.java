@@ -17,6 +17,7 @@ import net.createmod.ponder.api.scene.SceneBuilder;
 import net.createmod.ponder.api.scene.SceneBuildingUtil;
 import net.createmod.ponder.api.scene.Selection;
 import net.minecraft.core.Direction;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.phys.AABB;
 
@@ -203,7 +204,7 @@ public class ThermoelectricBoilerScenes {
         scene.overlay().showControls(util.vector().blockSurface(util.grid().at(6, 9, 4), Direction.WEST), Pointing.LEFT, 60)
                 .rightClick()
                 .whileSneaking()
-                .withItem(MekanismItems.CONFIGURATOR.getItemStack());
+                .withItem(new ItemStack(MekanismItems.CONFIGURATOR.asItem(), 1));
 
         scene.idle(20);
 

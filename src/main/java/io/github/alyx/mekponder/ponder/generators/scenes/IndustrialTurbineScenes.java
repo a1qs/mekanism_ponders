@@ -6,6 +6,7 @@ import io.github.alyx.mekponder.util.SceneUtil;
 import mekanism.api.chemical.ChemicalStack;
 import mekanism.common.registries.MekanismBlocks;
 import mekanism.common.registries.MekanismChemicals;
+import mekanism.common.registries.MekanismItems;
 import mekanism.generators.common.registries.GeneratorsBlocks;
 import mekanism.generators.common.registries.GeneratorsItems;
 import net.createmod.catnip.math.Pointing;
@@ -14,6 +15,7 @@ import net.createmod.ponder.api.scene.SceneBuilder;
 import net.createmod.ponder.api.scene.SceneBuildingUtil;
 import net.createmod.ponder.api.scene.Selection;
 import net.minecraft.core.Direction;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.AABB;
 
 public class IndustrialTurbineScenes {
@@ -110,7 +112,7 @@ public class IndustrialTurbineScenes {
 
         scene.overlay().showControls(util.vector().blockSurface(util.grid().at(3, 3, 3), Direction.UP), Pointing.LEFT, 60)
                 .rightClick()
-                .withItem(GeneratorsItems.TURBINE_BLADE.getItemStack());
+                .withItem(new ItemStack(GeneratorsItems.TURBINE_BLADE.asItem(), 1));
 
         scene.idle(80);
 

@@ -2,11 +2,14 @@ package io.github.alyx.mekponder.ponder.generators.scenes;
 
 
 import io.github.alyx.mekponder.mixin.AccessorAttributeStateActive;
+import io.github.alyx.mekponder.ponder.element.ChemicalPonderRender;
 import io.github.alyx.mekponder.ponder.generators.MekGensPonderScenes;
 import io.github.alyx.mekponder.util.SceneUtil;
+import mekanism.api.chemical.ChemicalStack;
 import mekanism.common.block.attribute.AttributeStateActive;
 import mekanism.common.block.attribute.Attributes;
 import mekanism.common.particle.LaserParticleData;
+import mekanism.common.registries.MekanismChemicals;
 import mekanism.common.registries.MekanismItems;
 import mekanism.common.util.ChemicalUtil;
 import mekanism.generators.common.registries.GeneratorsBlocks;
@@ -21,6 +24,7 @@ import net.createmod.ponder.api.scene.SceneBuilder;
 import net.createmod.ponder.api.scene.SceneBuildingUtil;
 import net.createmod.ponder.api.scene.Selection;
 import net.minecraft.core.Direction;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.LeverBlock;
 import net.minecraft.world.level.block.state.BlockState;
 
@@ -171,7 +175,7 @@ public class FusionReactorScenes {
         scene.overlay().showControls(util.vector().blockSurface(util.grid().at(1, 3, 2), Direction.WEST), Pointing.LEFT, 60)
                 .rightClick()
                 .whileSneaking()
-                .withItem(MekanismItems.CONFIGURATOR.getItemStack());
+                .withItem(new ItemStack(MekanismItems.CONFIGURATOR.asItem(), 1));
         scene.idle(40);
 
         SceneUtil.loopBlockProperty(scene, util.grid().at(1, 3, 2), ((AccessorAttributeStateActive) Attributes.ACTIVE).mekanism_ponder$getActiveProperty(), 3, 12);
@@ -247,7 +251,7 @@ public class FusionReactorScenes {
 
         scene.idle(90);
         scene.overlay().showControls(util.vector().blockSurface(util.grid().at(5, 5, 3), Direction.UP), Pointing.UP, 40)
-                .withItem(ChemicalUtil.getFilledVariant(GeneratorsItems.HOHLRAUM, GeneratorsChemicals.FUSION_FUEL));
+                .withItem(new ItemStack(GeneratorsItems.HOHLRAUM.asItem(), 1));
         scene.idle(50);
 
         scene.overlay().showText(130)
@@ -325,10 +329,10 @@ public class FusionReactorScenes {
         scene.idle(90);
 
         scene.overlay().showControls(util.vector().centerOf(4, 3, 0), Pointing.UP, 60)
-                        .withItem(GeneratorsFluids.DEUTERIUM.getBucket().getDefaultInstance());
+                .showing(new ChemicalPonderRender(new ChemicalStack(GeneratorsChemicals.DEUTERIUM, 1000)));
 
         scene.overlay().showControls(util.vector().centerOf(2, 3, 0), Pointing.UP, 60)
-                .withItem(GeneratorsFluids.TRITIUM.getBucket().getDefaultInstance());
+                .showing(new ChemicalPonderRender(new ChemicalStack(GeneratorsChemicals.TRITIUM, 1000)));
 
         scene.idle(75);
         scene.world().hideSection(util.select().position(2, 3, 0).add(util.select().position(4, 3, 0)), Direction.UP);
@@ -348,7 +352,7 @@ public class FusionReactorScenes {
 
         scene.idle(50);
         scene.overlay().showControls(util.vector().centerOf(3, 3, 0), Pointing.UP, 60)
-                .withItem(GeneratorsFluids.FUSION_FUEL.getBucket().getDefaultInstance());
+                .showing(new ChemicalPonderRender(new ChemicalStack(GeneratorsChemicals.FUSION_FUEL, 1000)));
 
         scene.idle(60);
 

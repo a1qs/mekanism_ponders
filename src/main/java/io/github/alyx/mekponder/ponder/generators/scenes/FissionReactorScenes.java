@@ -16,6 +16,7 @@ import net.createmod.ponder.api.scene.SceneBuilder;
 import net.createmod.ponder.api.scene.SceneBuildingUtil;
 import net.createmod.ponder.api.scene.Selection;
 import net.minecraft.core.Direction;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ComparatorBlock;
 import net.minecraft.world.level.block.LeverBlock;
@@ -192,7 +193,7 @@ public class FissionReactorScenes {
         scene.overlay().showControls(util.vector().blockSurface(util.grid().at(4, 2, 1), Direction.EAST), Pointing.RIGHT, 60)
                 .rightClick()
                 .whileSneaking()
-                .withItem(MekanismItems.CONFIGURATOR.getItemStack());
+                .withItem(new ItemStack(MekanismItems.CONFIGURATOR.asItem(), 1));
         scene.idle(40);
 
         SceneUtil.loopBlockProperty(scene, util.grid().at(4, 2, 1), AttributeStateFissionPortMode.modeProperty, 3, 12);
