@@ -3,10 +3,7 @@ package io.github.alyx.mekponder.ponder;
 
 import io.github.alyx.mekponder.MekanismPonders;
 import io.github.alyx.mekponder.ponder.generators.MekGensPonderScenes;
-import io.github.alyx.mekponder.ponder.scenes.DynamicTankScenes;
-import io.github.alyx.mekponder.ponder.scenes.InductionMatrixScenes;
-import io.github.alyx.mekponder.ponder.scenes.SupercriticalPhaseShifterScenes;
-import io.github.alyx.mekponder.ponder.scenes.ThermalEvaporationPlantScenes;
+import io.github.alyx.mekponder.ponder.scenes.*;
 import mekanism.common.registries.MekanismBlocks;
 import net.createmod.ponder.api.registration.PonderSceneRegistrationHelper;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -19,6 +16,7 @@ public class MekPonderScenes {
     public static final ResourceLocation CREATING_INDUCTION_MATRIX = MekanismPonders.id("creating_induction_matrix");
     public static final ResourceLocation CREATING_THERMAL_EVAPORATION_PLANT = MekanismPonders.id("creating_thermal_evaporation_plant");
     public static final ResourceLocation CREATING_SPS = MekanismPonders.id("creating_sps");
+    public static final ResourceLocation CREATING_THERMOELECTIC_BOILER = MekanismPonders.id("creating_thermoelectric_boiler");
 
     public static void register(PonderSceneRegistrationHelper<ResourceLocation> helper) {
         PonderSceneRegistrationHelper<Item> HELPER = helper.withKeyFunction(BuiltInRegistries.ITEM::getKey);
@@ -52,6 +50,12 @@ public class MekPonderScenes {
                 MekanismBlocks.SPS_PORT.asItem(),
                 MekanismBlocks.SUPERCHARGED_COIL.asItem()
         ).addStoryBoard(CREATING_SPS, SupercriticalPhaseShifterScenes::creatingSPS);
+
+        HELPER.forComponents(
+                MekanismBlocks.BOILER_CASING.asItem(),
+                MekanismBlocks.BOILER_VALVE.asItem(),
+                MekanismBlocks.SUPERHEATING_ELEMENT.asItem()
+        ).addStoryBoard(CREATING_THERMOELECTIC_BOILER, ThermoelectricBoilerScenes::creatingBoiler);
 
 
         if (MekanismPonders.isMekGensLoaded) {
