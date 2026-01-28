@@ -91,7 +91,7 @@ configurations {
 
 dependencies {
     implementation("curse.maven:jei-238222:7057366")
-    implementation("net.createmod.ponder:Ponder-NeoForge-${minecraft_version}:${ponder_version}");
+    implementation("net.createmod.ponder:Ponder-NeoForge-${minecraft_version}:${ponder_version}")
     implementation("mekanism:Mekanism:${mekanism_version}")            // Mekanism
     implementation("mekanism:Mekanism:${mekanism_version}:additions")  // Mekanism: Additions
     implementation("mekanism:Mekanism:${mekanism_version}:generators") // Mekanism: Generators
@@ -101,6 +101,9 @@ dependencies {
     compileOnly "mekanism:Mekanism:${mekanism_version}:api"
 
     runtimeOnly("mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}")
+
+    jarJar("net.createmod.ponder:Ponder-NeoForge-${minecraft_version}:${ponder_version}")
+    jarJar("dev.engine-room.flywheel:flywheel-neoforge-${minecraft_version}:${flywheel_version}")
 }
 
 var generateModMetadata = tasks.register("generateModMetadata", ProcessResources) {
@@ -114,6 +117,7 @@ var generateModMetadata = tasks.register("generateModMetadata", ProcessResources
             mod_name               : mod_name,
             mod_license            : mod_license,
             mod_version            : mod_version,
+            flywheel_version_range : flywheel_version_range,
     ]
     inputs.properties replaceProperties
     expand replaceProperties
