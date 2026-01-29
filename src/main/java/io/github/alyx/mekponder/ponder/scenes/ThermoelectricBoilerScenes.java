@@ -13,6 +13,7 @@ import net.createmod.ponder.api.PonderPalette;
 import net.createmod.ponder.api.scene.SceneBuilder;
 import net.createmod.ponder.api.scene.SceneBuildingUtil;
 import net.createmod.ponder.api.scene.Selection;
+import net.minecraft.client.Minecraft;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.AABB;
@@ -24,8 +25,15 @@ public class ThermoelectricBoilerScenes {
     public static void creatingBoiler(SceneBuilder scene, SceneBuildingUtil util) {
         scene.title(MekPonderScenes.CREATING_THERMOELECTIC_BOILER.getPath(), "Creating a Thermoelectric Boiler");
         scene.showBasePlate();
-        scene.scaleSceneView(0.75F);
-        //scene.debug().debugSchematic();
+
+        int guiScale = Minecraft.getInstance().options.guiScale().get();
+        if (guiScale == 3) {
+            scene.scaleSceneView(0.5F);
+        } else if(guiScale == 4) {
+            scene.scaleSceneView(0.4F);
+        } else {
+            scene.scaleSceneView(0.75F);
+        }
 
 
         Selection innerSections = util.select().fromTo(2, 2, 1, 6, 8, 1)

@@ -15,6 +15,7 @@ import net.createmod.ponder.api.PonderPalette;
 import net.createmod.ponder.api.scene.SceneBuilder;
 import net.createmod.ponder.api.scene.SceneBuildingUtil;
 import net.createmod.ponder.api.scene.Selection;
+import net.minecraft.client.Minecraft;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.ItemStack;
 
@@ -22,8 +23,17 @@ public class SupercriticalPhaseShifterScenes {
     public static void creatingSPS(SceneBuilder scene, SceneBuildingUtil util) {
         scene.title(MekPonderScenes.CREATING_SPS.getPath(), "Creating a Supercritical Phase Shifter");
         scene.showBasePlate();
-        scene.scaleSceneView(0.8F);
 
+
+        int guiScale = Minecraft.getInstance().options.guiScale().get();
+
+        if (guiScale == 3) {
+            scene.scaleSceneView(0.7F);
+        } else if(guiScale == 4) {
+            scene.scaleSceneView(0.6F);
+        } else {
+            scene.scaleSceneView(0.8F);
+        }
 
         Selection bottomLayer = util.select().fromTo(5, 1 ,1, 3, 1, 7)
                 .add(util.select().fromTo(7, 1, 5, 1, 1, 3))

@@ -13,6 +13,7 @@ import net.createmod.ponder.api.PonderPalette;
 import net.createmod.ponder.api.scene.SceneBuilder;
 import net.createmod.ponder.api.scene.SceneBuildingUtil;
 import net.createmod.ponder.api.scene.Selection;
+import net.minecraft.client.Minecraft;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.AABB;
@@ -23,6 +24,16 @@ public class IndustrialTurbineScenes {
         scene.title(MekGensPonderScenes.CREATING_TURBINE.getPath(), "Creating an Industrial Turbine");
         scene.showBasePlate();
         scene.scaleSceneView(0.8F);
+
+        int guiScale = Minecraft.getInstance().options.guiScale().get();
+        if (guiScale == 3) {
+            scene.scaleSceneView(0.65F);
+        } else if(guiScale == 4) {
+            scene.scaleSceneView(0.5F);
+        } else {
+            scene.scaleSceneView(0.8F);
+        }
+
 
         Selection innerFrame = util.select().fromTo(2, 2, 1, 4, 5, 1)
                         .add(util.select().fromTo(1, 2, 2, 1, 5, 4))
@@ -166,7 +177,15 @@ public class IndustrialTurbineScenes {
     public static void runningTurbine(SceneBuilder scene, SceneBuildingUtil util) {
         scene.title(MekGensPonderScenes.RUNNING_TURBINE.getPath(), "Running an Industrial Turbine");
         scene.showBasePlate();
-        scene.scaleSceneView(0.8F);
+
+        int guiScale = Minecraft.getInstance().options.guiScale().get();
+        if (guiScale == 3) {
+            scene.scaleSceneView(0.65F);
+        } else if(guiScale == 4) {
+            scene.scaleSceneView(0.5F);
+        } else {
+            scene.scaleSceneView(0.8F);
+        }
 
         Selection turbine = util.select().fromTo(1, 1, 1, 5, 8 ,5);
 
