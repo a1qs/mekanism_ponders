@@ -143,9 +143,10 @@
   "mekanism_ponders.ponder.starting_fusion_reactor.header": "Starting a Fusion Reactor",
   "mekanism_ponders.ponder.starting_fusion_reactor.text_1": "To start a Reactor, the Fusion Reactor Controller must contain a §lHohlraum§r filled with §5D-T Fuel§r.",
   "mekanism_ponders.ponder.starting_fusion_reactor.text_2": "The Reactor will start once it reaches its Ignition Temperature.\n\nThis temperature can be achieved by using a §lLaser Focus Matrix§r.",
-  "mekanism_ponders.ponder.starting_fusion_reactor.text_3": "A Laser amplifier can accumulate energy, and release it all at once, resulting in rapid heat increase.",
-  "mekanism_ponders.ponder.starting_fusion_reactor.text_4": "A successful activation with a Laser amplifier requires at least §c400MFE§r to reach the required Ignition Temperature.",
-  "mekanism_ponders.ponder.starting_fusion_reactor.text_5": "By toggling the Redstone Detection to \"NORMAL\", the Laser Amplifier will only shoot its accumulated energy once it receives a Redstone Signal.",
-  "mekanism_ponders.ponder.starting_fusion_reactor.text_6": "Redstone Detection: NORMAL",
-  "mekanism_ponders.ponder.starting_fusion_reactor.text_7": "The Reactor is now running."
+  "mekanism_ponders.ponder.starting_fusion_reactor.text_3": "A Laser Focus Matrix can absorb Laser beams and increases the temperature of the Reactor.",
+  "mekanism_ponders.ponder.starting_fusion_reactor.text_4": "A Laser amplifier can accumulate energy, and release it all at once, resulting in rapid heat increase.",
+  "mekanism_ponders.ponder.starting_fusion_reactor.text_5": "A successful activation with a Laser amplifier requires at least §c400MFE§r to reach the required Ignition Temperature.",
+  "mekanism_ponders.ponder.starting_fusion_reactor.text_6": "By toggling the Redstone Detection to \"NORMAL\", the Laser Amplifier will only shoot its accumulated energy once it receives a Redstone Signal.",
+  "mekanism_ponders.ponder.starting_fusion_reactor.text_7": "Redstone Detection: NORMAL",
+  "mekanism_ponders.ponder.starting_fusion_reactor.text_8": "The Reactor is now running."
 }

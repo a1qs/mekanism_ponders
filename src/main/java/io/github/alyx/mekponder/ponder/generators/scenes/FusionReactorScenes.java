@@ -251,8 +251,15 @@ public class FusionReactorScenes {
                 .withItem(new ItemStack(GeneratorsItems.HOHLRAUM.asItem(), 1));
         scene.idle(50);
 
+
+        scene.overlay().showOutline(PonderPalette.BLUE, new Object(), util.select().position(3, 3, 3),  250);
         scene.overlay().showText(130)
                 .text("The Reactor will start once it reaches its Ignition Temperature.\n\nThis temperature can be achieved by using a §lLaser Focus Matrix§r.");
+
+        scene.idle(150);
+        scene.overlay().showText(100)
+                .text("A Laser Focus Matrix can absorb Laser beams and increases the temperature of the Reactor.");
+
 
         scene.idle(140);
         scene.addKeyframe();

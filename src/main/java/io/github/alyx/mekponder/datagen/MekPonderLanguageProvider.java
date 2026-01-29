@@ -99,6 +99,7 @@ public class MekPonderLanguageProvider extends LanguageProvider {
 
                 "To start a Reactor, the Fusion Reactor Controller must contain a §lHohlraum§r filled with §5D-T Fuel§r.",
                 "The Reactor will start once it reaches its Ignition Temperature.\n\nThis temperature can be achieved by using a §lLaser Focus Matrix§r.",
+                "A Laser Focus Matrix can absorb Laser beams and increases the temperature of the Reactor.",
                 "A Laser amplifier can accumulate energy, and release it all at once, resulting in rapid heat increase.",
                 "A successful activation with a Laser amplifier requires at least §c400MFE§r to reach the required Ignition Temperature.",
                 "By toggling the Redstone Detection to \"NORMAL\", the Laser Amplifier will only shoot its accumulated energy once it receives a Redstone Signal.",
