@@ -180,7 +180,7 @@ public class InductionMatrixScenes {
 
         scene.overlay().showText(150)
                 .colored(PonderPalette.BLUE)
-                .text("The UI provides information about the §6current amount of power stored§r, the §6total capacity§r, as well as the amount of energy being §6inserted§r and §6outputtedg§r.");
+                .text("The UI provides information about the §6current amount of power stored§r, the §6total capacity§r, as well as the amount of energy being §6inserted§r and §6outputted§r.");
 
 
         scene.idle(175);

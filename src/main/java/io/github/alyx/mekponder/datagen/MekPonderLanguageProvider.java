@@ -65,7 +65,7 @@ public class MekPonderLanguageProvider extends LanguageProvider {
                 "Nuclear Waste is radioactive, meaning that it cannot be stored in normal Chemical Tanks.\nRadioactive Waste Barrels can be used, which will dissapate the waste stored.",
                 "While running, the reactor produces heat and can consume Coolant to cool itself down, producing Steam or Superheated Sodium in the process.",
                 "If the temperature reaches levels beyond 1200K the reactor will increase its damage percentage.",
-                "Once it's beyond 100%, each tick has a chance that the reactor will explode, while it is above 100%."
+                "Once it's beyond 100%%, each tick has a chance that the reactor will explode, while it is above 100%%."
         );
 
         // Fusion Scenes
@@ -162,6 +162,8 @@ public class MekPonderLanguageProvider extends LanguageProvider {
                 "Once properly built, it will emit Redstone Particles to indicate its completion.",
                 "A Dynamic Tank Multiblock can range from sizes of 3x3x3, up to 18x18x18.",
                 "The larger the structure is, the more capacity it has.\n Capacities differ from Fluids and Chemicals, with Chemicals having larger capacities than fluids.",
+                "Right clicking anywhere on the Dynamic tank opens its UI, allowing you to see the total stored amount of the Fluid or Chemical and the total Capacity that the Tank can hold.",
+                "In addition to that, it allows you to fill containers from the UI, and you can configure whether the Tank should only Fill itself, Empty itself, or both.",
                 "To insert/extract Fluids or Chemicals, a Dynamic Valve can be used.",
                 "Simply connect a transmitter of your choosing to the valve.",
                 "To extract Fluids or Chemicals, the given transmitter must be set to pull from the valve."
@@ -183,7 +185,7 @@ public class MekPonderLanguageProvider extends LanguageProvider {
                 "To insert and extract any power out of the Induction Matrix, it needs an Induction Provider.",
                 "Induction Providers allow you to add transfer Capacity to the Induction Matrix.",
                 "The Induction Matrix has a UI, accessible by clicking anywhere on it while it's assembled.",
-                "The UI provides information about the §6current amount of power stored§r, the §6total capacity§r, as well as the amount of energy being §6inserted§r and §6outputtedg§r.",
+                "The UI provides information about the §6current amount of power stored§r, the §6total capacity§r, as well as the amount of energy being §6inserted§r and §6outputted§r.",
                 "The transfer mode of a Induction Port can be configured using a Configurator.\n\nThis can toggle the port to either §4Output§r or §aInput§r mode.",
                 "In §aInput§r mode, it is able to receive power from any source.",
                 "In §4Output§r mode, you can extract power from the Induction Matrix."
