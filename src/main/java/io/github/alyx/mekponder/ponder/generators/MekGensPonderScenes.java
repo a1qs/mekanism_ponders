@@ -42,8 +42,9 @@ public class MekGensPonderScenes {
                 )
                 .addStoryBoard(CONSTRUCTING_FUSION_REACTOR, FusionReactorScenes::constructingReactor)
                 .addStoryBoard(CONFIGURING_FUSION_REACTOR, FusionReactorScenes::configuringReactor)
-                .addStoryBoard(STARTING_FUSION_REACTOR, FusionReactorScenes::startingReactor)
-                .addStoryBoard(FUELING_FUSION_REACTOR, FusionReactorScenes::fuelingReactor);
+                .addStoryBoard(FUELING_FUSION_REACTOR, FusionReactorScenes::fuelingReactor)
+                .addStoryBoard(STARTING_FUSION_REACTOR, FusionReactorScenes::startingReactor);
+
 
 
 
