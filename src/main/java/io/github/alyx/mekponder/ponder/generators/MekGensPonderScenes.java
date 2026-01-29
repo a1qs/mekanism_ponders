@@ -37,6 +37,7 @@ public class MekGensPonderScenes {
                         GeneratorsBlocks.FUSION_REACTOR_FRAME.asItem(),
                         GeneratorsBlocks.FUSION_REACTOR_LOGIC_ADAPTER.asItem(),
                         GeneratorsBlocks.FUSION_REACTOR_PORT.asItem(),
+                        GeneratorsBlocks.LASER_FOCUS_MATRIX.asItem(),
                         GeneratorsItems.HOHLRAUM.asItem()
                 )
                 .addStoryBoard(CONSTRUCTING_FUSION_REACTOR, FusionReactorScenes::constructingReactor)
