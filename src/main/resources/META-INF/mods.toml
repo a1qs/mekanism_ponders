@@ -1,10 +1,10 @@
-
 modLoader="javafml" #mandatory
 loaderVersion="${loader_version_range}" #mandatory
 license="${mod_license}"
 issueTrackerURL="https://github.com/a1qs/mekanism_ponders/issues"
 
-# A list of mods - how many allowed here is determined by the individual mod loader
+#clientSideOnly=true #optional - defaults to false if absent
+
 [[mods]] #mandatory
 modId="${mod_id}" #mandatory
 version="${mod_version}" #mandatory
@@ -12,54 +12,48 @@ displayName="${mod_name}" #mandatory
 displayURL="https://github.com/a1qs/mekanism_ponders" #optional
 logoFile="mekanism_ponders.png" #optional
 credits="Creators of Create for creating the Ponder System and the developers of Mekanism" #optional
-authors="alyx"
-description='''
-Adds Ponders to various Mekanism features!
-'''
+authors="${mod_authors}" #optional
+description='''${mod_description}'''
 
-[[mixins]]
-config="${mod_id}.mixins.json"
 
-# The [[accessTransformers]] block allows you to declare where your AT file is.
-# If this block is omitted, a fallback attempt will be made to load an AT from META-INF/accesstransformer.cfg
-#[[accessTransformers]]
-#file="META-INF/accesstransformer.cfg"
-
-# The coremods config file path is not configurable and is always loaded from META-INF/coremods.json
-
-# A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies.${mod_id}]] #optional
-    modId="neoforge" #mandatory
-    type="required" #mandatory
-    versionRange="${neo_version_range}" #mandatory
+    modId="forge" #mandatory
+    mandatory=true #mandatory
+    versionRange="${forge_version_range}" #mandatory
     ordering="NONE"
     side="BOTH"
 
 # Here's another dependency
 [[dependencies.${mod_id}]]
     modId="minecraft"
-    type="required"
+    mandatory=true #mandatory
     versionRange="${minecraft_version_range}"
     ordering="NONE"
     side="BOTH"
 
 [[dependencies.${mod_id}]] #optional
     modId="mekanism" #mandatory
-    type="required" #mandatory
-    versionRange="[10.7.9,)" #mandatory
+    mandatory=true #mandatory
+    versionRange="[10.4.16,)" #mandatory
     ordering="AFTER"
     side="BOTH"
 
 [[dependencies.${mod_id}]] #optional
     modId="mekanismgenerators" #mandatory
-    type="optional" #mandatory
-    versionRange="[10.7.9,)" #mandatory
+    mandatory=false #mandatory
+    versionRange="[10.4.16,)" #mandatory
     ordering="AFTER"
     side="BOTH"
 
-[[dependencies."${mod_id}"]]
+[[dependencies.${mod_id}]]
     modId = "flywheel"
-    type = "required"
+    mandatory=true #mandatory
     versionRange = "${flywheel_version_range}"
     ordering = "AFTER"
     side = "CLIENT"
+
+# Features are specific properties of the game environment, that you may want to declare you require. This example declares
+# that your mod requires GL version 3.2 or higher. Other features will be added. They are side aware so declaring this won't
+# stop your mod loading on the server for example.
+#[features.${mod_id}]
+#openGLVersion="[3.2,)"
