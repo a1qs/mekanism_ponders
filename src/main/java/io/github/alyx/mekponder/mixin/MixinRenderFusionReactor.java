@@ -8,6 +8,7 @@ import mekanism.client.model.ModelEnergyCore;
 import mekanism.generators.client.render.RenderFusionReactor;
 import mekanism.generators.common.content.fusion.FusionReactorMultiblockData;
 import mekanism.generators.common.tile.fusion.TileEntityFusionReactorController;
+import net.createmod.ponder.foundation.ui.PonderUI;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.util.profiling.ProfilerFiller;
@@ -29,14 +30,14 @@ public abstract class MixinRenderFusionReactor {
     @Inject(method = "render(Lmekanism/generators/common/tile/fusion/TileEntityFusionReactorController;Lmekanism/generators/common/content/fusion/FusionReactorMultiblockData;FLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;IILnet/minecraft/util/profiling/ProfilerFiller;)V", at = @At("HEAD"), cancellable = true)
     private void fusionPonderLevelRenderer(TileEntityFusionReactorController tile, FusionReactorMultiblockData multiblock, float partialTicks, PoseStack matrix, MultiBufferSource renderer, int light, int overlayLight, ProfilerFiller profiler, CallbackInfo ci) {
         if (MiscUtil.isInPonderLevel(tile.getLevel())) {
-            var e = tile.saveWithFullMetadata(tile.getLevel().registryAccess());
+            var e = tile.saveWithFullMetadata();
             if (e.getByte("redstone") == 0) { // why
                 ci.cancel();
                 return;
             }
 
             long scaledTemp = Math.round(15_000_000_00 / SCALE);
-            float ticks = ((float) ((AccessorMinecraft) Minecraft.getInstance()).mekanism_ponder$getClientTickCount() / 2) + partialTicks;
+            float ticks = (float) PonderUI.ponderTicks / 2 + partialTicks; // TODO: CHeck if this still works like it should
             VertexConsumer buffer = renderer.getBuffer(core.RENDER_TYPE);
             matrix.pushPose();
             matrix.translate(0.5, -1.5, 0.5);

@@ -5,7 +5,7 @@ import mekanism.client.render.MekanismRenderer;
 import net.createmod.catnip.gui.element.ScreenElement;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
-import net.neoforged.neoforge.fluids.FluidStack;
+import net.minecraftforge.fluids.FluidStack;
 
 public class FluidPonderRender implements ScreenElement {
     private final FluidStack stack;

@@ -27,7 +27,7 @@ public class MiscGeneratorScenes {
         scene.world().hideSection(solarPanels, Direction.UP);
         scene.idle(15);
 
-        scene.world().replaceBlocks(solarPanels, GeneratorsBlocks.ADVANCED_SOLAR_GENERATOR.defaultState(), false);
+        scene.world().replaceBlocks(solarPanels, GeneratorsBlocks.ADVANCED_SOLAR_GENERATOR.getBlock().defaultBlockState(), false);
 
         scene.idle(5);
         scene.world().showSection(solarPanels, Direction.DOWN);
@@ -40,14 +40,14 @@ public class MiscGeneratorScenes {
         scene.idle(125);
         scene.world().hideSection(solarPanels, Direction.UP);
         scene.idle(15);
-        scene.world().replaceBlocks(solarPanels, MekanismBlocks.THERMAL_EVAPORATION_BLOCK.defaultState(), false);
+        scene.world().replaceBlocks(solarPanels, MekanismBlocks.THERMAL_EVAPORATION_BLOCK.getBlock().defaultBlockState(), false);
         scene.idle(5);
         scene.world().showSection(solarPanels, Direction.DOWN);
         scene.idle(30);
     }
 
     public static void heatGeneratorInductionMatrix(SceneBuilder scene, SceneBuildingUtil util) {
-        scene.world().setBlock(util.grid().at(4, 2, 0), GeneratorsBlocks.HEAT_GENERATOR.defaultState(), false);
+        scene.world().setBlock(util.grid().at(4, 2, 0), GeneratorsBlocks.HEAT_GENERATOR.getBlock().defaultBlockState(), false);
         scene.world().modifyBlock(util.grid().at(4, 2, 0), a -> Attribute.setFacing(a, Direction.SOUTH), false);
         scene.world().showSection(util.select().position(4, 2, 0), Direction.UP);
 

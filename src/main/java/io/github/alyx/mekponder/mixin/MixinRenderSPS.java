@@ -24,13 +24,14 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.Map;
 import java.util.Objects;
+import java.util.Random;
 import java.util.UUID;
 
 @Mixin(value = RenderSPS.class, remap = false)
 public abstract class MixinRenderSPS {
 
     @Shadow @Final private static Map<UUID, BoltRenderer> boltRendererMap;
-    @Shadow @Final private static RandomSource rand;
+
 
     @Shadow
     private static BoltEffect getBoltFromData(SPSMultiblockData.CoilData data, BlockPos pos, Vec3 center) {
@@ -42,13 +43,15 @@ public abstract class MixinRenderSPS {
         return 0;
     }
 
+    @Shadow @Final private static Random rand;
+
     @Inject(method = "render(Lmekanism/common/tile/multiblock/TileEntitySPSCasing;Lmekanism/common/content/sps/SPSMultiblockData;FLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;IILnet/minecraft/util/profiling/ProfilerFiller;)V", at = @At("HEAD"), cancellable = true)
     private void spsPonderLevelRenderer(TileEntitySPSCasing tile, SPSMultiblockData multiblock, float partialTick, PoseStack matrix, MultiBufferSource renderer, int light, int overlayLight, ProfilerFiller profiler, CallbackInfo ci) {
         if (MiscUtil.isInPonderLevel(tile.getLevel())) {
 
             if (tile.getBlockPos().equals(new BlockPos(5, 1, 3))) {
 
-                var e = tile.saveWithFullMetadata(tile.getLevel().registryAccess());
+                var e = tile.saveWithFullMetadata();
                 if (e.getByte("redstone") == 0) { // why
                     ci.cancel();
                     return;
@@ -66,7 +69,7 @@ public abstract class MixinRenderSPS {
                 float energyScale = 1;
 
                 if (rand.nextDouble() < getBoundedScale(energyScale, 0.01F, 0.4F)) {
-                    VoxelCuboid.CuboidSide side = Util.getRandom(VoxelCuboid.CuboidSide.SIDES, rand);
+                    VoxelCuboid.CuboidSide side = VoxelCuboid.CuboidSide.SIDES[rand.nextInt(6)];
                     VoxelCuboid c = new VoxelCuboid(new BlockPos(1, 1, 1), new BlockPos(7, 7, 7));
                     Plane plane = Plane.getInnerCuboidPlane(c, side);
                     Vec3 endPos = plane.getRandomPoint(rand).subtract(tile.getBlockPos().getX(), tile.getBlockPos().getY(), tile.getBlockPos().getZ());

@@ -2,10 +2,9 @@ package io.github.alyx.mekponder;
 
 import com.mojang.logging.LogUtils;
 import net.minecraft.resources.ResourceLocation;
-import net.neoforged.bus.api.IEventBus;
-import net.neoforged.fml.ModContainer;
-import net.neoforged.fml.ModList;
-import net.neoforged.fml.common.Mod;
+import net.minecraftforge.fml.ModList;
+import net.minecraftforge.fml.common.Mod;
+
 import org.slf4j.Logger;
 
 
@@ -18,11 +17,11 @@ public class MekanismPonders {
 
     public static boolean isMekGensLoaded = false;
 
-    public MekanismPonders(IEventBus modEventBus, ModContainer modContainer) {
+    public MekanismPonders() {
         isMekGensLoaded = ModList.get().isLoaded("mekanismgenerators"); // We only want to add Ponders that include MekanismGenerators things if the mod is loaded.
     }
 
     public static ResourceLocation id(String name) {
-        return ResourceLocation.fromNamespaceAndPath(MODID, name);
+        return new ResourceLocation(MODID, name);
     }
 }

@@ -7,11 +7,9 @@ import io.github.alyx.mekponder.ponder.generators.scenes.IndustrialTurbineScenes
 import mekanism.generators.common.registries.GeneratorsBlocks;
 import mekanism.generators.common.registries.GeneratorsItems;
 import net.createmod.ponder.api.registration.PonderSceneRegistrationHelper;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
-
-
+import net.minecraftforge.registries.ForgeRegistries;
 
 
 public class MekGensPonderScenes {
@@ -30,7 +28,7 @@ public class MekGensPonderScenes {
 
     // Only loaded if Mekanism: Generators is loaded
     public static void registerGeneratorScenes(PonderSceneRegistrationHelper<ResourceLocation> helper) {
-        PonderSceneRegistrationHelper<Item> HELPER = helper.withKeyFunction(BuiltInRegistries.ITEM::getKey);
+        PonderSceneRegistrationHelper<Item> HELPER = helper.withKeyFunction(ForgeRegistries.ITEMS::getKey);
 
         HELPER.forComponents(
                         GeneratorsBlocks.FUSION_REACTOR_CONTROLLER.asItem(),

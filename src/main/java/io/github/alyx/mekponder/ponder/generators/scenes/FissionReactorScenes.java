@@ -4,9 +4,9 @@ import io.github.alyx.mekponder.ponder.element.ChemicalPonderRender;
 import io.github.alyx.mekponder.ponder.element.FluidPonderRender;
 import io.github.alyx.mekponder.ponder.generators.MekGensPonderScenes;
 import io.github.alyx.mekponder.util.SceneUtil;
-import mekanism.api.chemical.ChemicalStack;
+import mekanism.api.chemical.gas.GasStack;
 import mekanism.common.registries.MekanismBlocks;
-import mekanism.common.registries.MekanismChemicals;
+import mekanism.common.registries.MekanismGases;
 import mekanism.common.registries.MekanismItems;
 import mekanism.generators.common.block.attribute.AttributeStateFissionPortMode;
 import mekanism.generators.common.registries.GeneratorsBlocks;
@@ -22,7 +22,7 @@ import net.minecraft.world.level.block.ComparatorBlock;
 import net.minecraft.world.level.block.LeverBlock;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.AABB;
-import net.neoforged.neoforge.fluids.FluidStack;
+import net.minecraftforge.fluids.FluidStack;
 
 public class FissionReactorScenes {
 
@@ -84,14 +84,14 @@ public class FissionReactorScenes {
 
         scene.idle(140);
 
-        scene.world().replaceBlocks(innerSections, GeneratorsBlocks.REACTOR_GLASS.defaultState(), true);
+        scene.world().replaceBlocks(innerSections, GeneratorsBlocks.REACTOR_GLASS.getBlock().defaultBlockState(), true);
         scene.idle(10);
-        scene.world().replaceBlocks(util.select().fromTo(4, 2, 1, 3, 2, 1), GeneratorsBlocks.FISSION_REACTOR_PORT.defaultState(), true);
+        scene.world().replaceBlocks(util.select().fromTo(4, 2, 1, 3, 2, 1), GeneratorsBlocks.FISSION_REACTOR_PORT.getBlock().defaultBlockState(), true);
         scene.idle(5);
-        scene.world().replaceBlocks(util.select().fromTo(1, 2, 3, 1, 2, 4), GeneratorsBlocks.FISSION_REACTOR_PORT.defaultState(), true);
+        scene.world().replaceBlocks(util.select().fromTo(1, 2, 3, 1, 2, 4), GeneratorsBlocks.FISSION_REACTOR_PORT.getBlock().defaultBlockState(), true);
         scene.idle(10);
-        scene.world().replaceBlocks(util.select().position(2, 2, 1), GeneratorsBlocks.FISSION_REACTOR_LOGIC_ADAPTER.defaultState(), true);
-        scene.world().replaceBlocks(util.select().position(1, 2, 2), GeneratorsBlocks.FISSION_REACTOR_LOGIC_ADAPTER.defaultState(), true);
+        scene.world().replaceBlocks(util.select().position(2, 2, 1), GeneratorsBlocks.FISSION_REACTOR_LOGIC_ADAPTER.getBlock().defaultBlockState(), true);
+        scene.world().replaceBlocks(util.select().position(1, 2, 2), GeneratorsBlocks.FISSION_REACTOR_LOGIC_ADAPTER.getBlock().defaultBlockState(), true);
 
         scene.idle(50);
 
@@ -115,21 +115,21 @@ public class FissionReactorScenes {
 
         scene.idle(160);
 
-        scene.world().setBlocks(util.select().fromTo(4, 2, 2, 4, 3, 2), GeneratorsBlocks.FISSION_FUEL_ASSEMBLY.defaultState(), true);
+        scene.world().setBlocks(util.select().fromTo(4, 2, 2, 4, 3, 2), GeneratorsBlocks.FISSION_FUEL_ASSEMBLY.getBlock().defaultBlockState(), true);
         scene.idle(5);
-        scene.world().setBlock(util.grid().at(4, 4, 2), GeneratorsBlocks.CONTROL_ROD_ASSEMBLY.defaultState(), true);
+        scene.world().setBlock(util.grid().at(4, 4, 2), GeneratorsBlocks.CONTROL_ROD_ASSEMBLY.getBlock().defaultBlockState(), true);
         scene.idle(15);
 
-        scene.world().setBlocks(util.select().fromTo(4, 2, 4, 4, 3, 4), GeneratorsBlocks.FISSION_FUEL_ASSEMBLY.defaultState(), true);
+        scene.world().setBlocks(util.select().fromTo(4, 2, 4, 4, 3, 4), GeneratorsBlocks.FISSION_FUEL_ASSEMBLY.getBlock().defaultBlockState(), true);
         scene.idle(5);
-        scene.world().setBlock(util.grid().at(4, 4, 4), GeneratorsBlocks.CONTROL_ROD_ASSEMBLY.defaultState(), true);
+        scene.world().setBlock(util.grid().at(4, 4, 4), GeneratorsBlocks.CONTROL_ROD_ASSEMBLY.getBlock().defaultBlockState(), true);
         scene.idle(15);
 
         scene.idle(25);
 
-        scene.world().setBlocks(util.select().fromTo(4, 2, 3, 4, 3, 3), GeneratorsBlocks.FISSION_FUEL_ASSEMBLY.defaultState(), true);
+        scene.world().setBlocks(util.select().fromTo(4, 2, 3, 4, 3, 3), GeneratorsBlocks.FISSION_FUEL_ASSEMBLY.getBlock().defaultBlockState(), true);
         scene.idle(5);
-        scene.world().setBlock(util.grid().at(4, 4, 3), GeneratorsBlocks.CONTROL_ROD_ASSEMBLY.defaultState(), true);
+        scene.world().setBlock(util.grid().at(4, 4, 3), GeneratorsBlocks.CONTROL_ROD_ASSEMBLY.getBlock().defaultBlockState(), true);
         scene.idle(15);
 
         scene.overlay().showOutlineWithText(util.select().fromTo(4, 2, 3, 4, 4, 3), 100)
@@ -321,7 +321,7 @@ public class FissionReactorScenes {
 
         scene.idle(5);
         scene.overlay().showControls(util.vector().centerOf(2, 6, 4), Pointing.LEFT, 80)
-                .showing(new ChemicalPonderRender(new ChemicalStack(MekanismChemicals.STEAM, 1000)));
+                .showing(new ChemicalPonderRender(new GasStack(MekanismGases.STEAM, 1000)));
 
         scene.idle(100);
 
@@ -333,7 +333,7 @@ public class FissionReactorScenes {
 
         scene.addKeyframe();
 
-        scene.world().setBlock(util.grid().at(4, 6, 2), MekanismBlocks.ULTIMATE_CHEMICAL_TANK.defaultState(), false);
+        scene.world().setBlock(util.grid().at(4, 6, 2), MekanismBlocks.ULTIMATE_CHEMICAL_TANK.getBlock().defaultBlockState(), false);
 
         scene.idle(20);
 
@@ -353,11 +353,11 @@ public class FissionReactorScenes {
         scene.world().showSection(util.select().position(2, 6, 4), Direction.DOWN);
 
         scene.overlay().showControls(util.vector().centerOf(4, 6, 2), Pointing.RIGHT, 40)
-                .showing(new ChemicalPonderRender(new ChemicalStack(MekanismChemicals.SODIUM, 1000)));
+                .showing(new ChemicalPonderRender(new GasStack(MekanismGases.SODIUM, 1000)));
 
         scene.idle(5);
         scene.overlay().showControls(util.vector().centerOf(2, 6, 4), Pointing.LEFT, 40)
-                .showing(new ChemicalPonderRender(new ChemicalStack(MekanismChemicals.SUPERHEATED_SODIUM, 1000)));
+                .showing(new ChemicalPonderRender(new GasStack(MekanismGases.SUPERHEATED_SODIUM, 1000)));
 
         scene.idle(60);
     }
@@ -388,11 +388,11 @@ public class FissionReactorScenes {
         scene.idle(20);
 
         scene.overlay().showControls(util.vector().centerOf(4, 6, 2), Pointing.RIGHT, 40)
-                .showing(new ChemicalPonderRender(new ChemicalStack(MekanismChemicals.FISSILE_FUEL, 1000)));
+                .showing(new ChemicalPonderRender(new GasStack(MekanismGases.FISSILE_FUEL, 1000)));
 
         scene.idle(5);
         scene.overlay().showControls(util.vector().centerOf(2, 6, 4), Pointing.LEFT, 40)
-                .showing(new ChemicalPonderRender(new ChemicalStack(MekanismChemicals.NUCLEAR_WASTE, 1000)));
+                .showing(new ChemicalPonderRender(new GasStack(MekanismGases.NUCLEAR_WASTE, 1000)));
 
         scene.idle(60);
 

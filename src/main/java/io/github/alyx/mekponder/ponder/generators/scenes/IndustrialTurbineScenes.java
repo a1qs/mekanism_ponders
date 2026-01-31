@@ -3,9 +3,9 @@ package io.github.alyx.mekponder.ponder.generators.scenes;
 import io.github.alyx.mekponder.ponder.element.ChemicalPonderRender;
 import io.github.alyx.mekponder.ponder.generators.MekGensPonderScenes;
 import io.github.alyx.mekponder.util.SceneUtil;
-import mekanism.api.chemical.ChemicalStack;
+import mekanism.api.chemical.gas.GasStack;
 import mekanism.common.registries.MekanismBlocks;
-import mekanism.common.registries.MekanismChemicals;
+import mekanism.common.registries.MekanismGases;
 import mekanism.generators.common.registries.GeneratorsBlocks;
 import mekanism.generators.common.registries.GeneratorsItems;
 import net.createmod.catnip.math.Pointing;
@@ -92,9 +92,9 @@ public class IndustrialTurbineScenes {
                 .text("Inner sections of the structure can be replaced with Structural Glass or Turbine Valves.");
 
         scene.idle(110);
-        scene.world().replaceBlocks(innerFrame, MekanismBlocks.STRUCTURAL_GLASS.defaultState(), true);
+        scene.world().replaceBlocks(innerFrame, MekanismBlocks.STRUCTURAL_GLASS.getBlock().defaultBlockState(), true);
         scene.idle(20);
-        scene.world().replaceBlocks(util.select().position(3, 2, 1), GeneratorsBlocks.TURBINE_VALVE.defaultState(), true);
+        scene.world().replaceBlocks(util.select().position(3, 2, 1), GeneratorsBlocks.TURBINE_VALVE.getBlock().defaultBlockState(), true);
 
         scene.idle(40);
 
@@ -160,9 +160,9 @@ public class IndustrialTurbineScenes {
 
         scene.idle(140);
 
-        scene.world().setBlocks(topInnerLayers, GeneratorsBlocks.TURBINE_VENT.defaultState(), true);
+        scene.world().setBlocks(topInnerLayers, GeneratorsBlocks.TURBINE_VENT.getBlock().defaultBlockState(), true);
         scene.idle(20);
-        scene.world().setBlocks(util.select().fromTo(2, 8, 2, 4, 8, 4), GeneratorsBlocks.TURBINE_VENT.defaultState(), true);
+        scene.world().setBlocks(util.select().fromTo(2, 8, 2, 4, 8, 4), GeneratorsBlocks.TURBINE_VENT.getBlock().defaultBlockState(), true);
         scene.idle(60);
 
         scene.overlay().showText(120)
@@ -212,7 +212,7 @@ public class IndustrialTurbineScenes {
         scene.idle(10);
 
         scene.overlay().showControls(util.vector().centerOf(3, 2, 0), Pointing.RIGHT, 80)
-                .showing(new ChemicalPonderRender(new ChemicalStack(MekanismChemicals.STEAM, 1000)));
+                .showing(new ChemicalPonderRender(new GasStack(MekanismGases.STEAM, 1000)));
 
         scene.idle(100);
 

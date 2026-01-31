@@ -4,10 +4,10 @@ import io.github.alyx.mekponder.mixin.AccessorAttributeStateActive;
 import io.github.alyx.mekponder.ponder.MekPonderScenes;
 import io.github.alyx.mekponder.ponder.element.ChemicalPonderRender;
 import io.github.alyx.mekponder.util.SceneUtil;
-import mekanism.api.chemical.ChemicalStack;
+import mekanism.api.chemical.gas.GasStack;
 import mekanism.common.block.attribute.Attributes;
 import mekanism.common.registries.MekanismBlocks;
-import mekanism.common.registries.MekanismChemicals;
+import mekanism.common.registries.MekanismGases;
 import mekanism.common.registries.MekanismItems;
 import mekanism.common.tile.multiblock.TileEntitySPSCasing;
 import net.createmod.catnip.math.Pointing;
@@ -49,7 +49,7 @@ public class SupercriticalPhaseShifterScenes {
 
         Selection glass = util.select().fromTo(5, 6, 1, 3, 2, 1).add(util.select().fromTo(6, 5, 1, 2, 3, 1));
 
-        scene.world().replaceBlocks(ports, MekanismBlocks.STRUCTURAL_GLASS.defaultState(), false); // place back later
+        scene.world().replaceBlocks(ports, MekanismBlocks.STRUCTURAL_GLASS.getBlock().defaultBlockState(), false); // place back later
 
 
 
@@ -88,7 +88,7 @@ public class SupercriticalPhaseShifterScenes {
         scene.overlay().showOutline(PonderPalette.BLUE, new Object(), glass, 60);
         scene.idle(65);
 
-        scene.world().setBlocks(ports, MekanismBlocks.SPS_PORT.defaultState(), true);
+        scene.world().setBlocks(ports, MekanismBlocks.SPS_PORT.getBlock().defaultBlockState(), true);
 
         scene.idle(30);
 
@@ -161,7 +161,7 @@ public class SupercriticalPhaseShifterScenes {
         scene.idle(40);
 
         scene.overlay().showControls(util.vector().centerOf(util.grid().at(5, 2, 0)), Pointing.RIGHT, 40)
-                .showing(new ChemicalPonderRender(new ChemicalStack(MekanismChemicals.POLONIUM, 1000)));
+                .showing(new ChemicalPonderRender(new GasStack(MekanismGases.POLONIUM, 1000)));
 
         scene.idle(60);
 
@@ -186,7 +186,7 @@ public class SupercriticalPhaseShifterScenes {
         scene.idle(20);
 
         scene.overlay().showControls(util.vector().centerOf(util.grid().at(3, 2, 0)), Pointing.RIGHT, 40)
-                .showing(new ChemicalPonderRender(new ChemicalStack(MekanismChemicals.ANTIMATTER, 1000)));
+                .showing(new ChemicalPonderRender(new GasStack(MekanismGases.ANTIMATTER, 1000)));
 
         scene.idle(60);
 

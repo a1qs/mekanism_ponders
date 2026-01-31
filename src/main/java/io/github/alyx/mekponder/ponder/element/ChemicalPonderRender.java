@@ -9,10 +9,10 @@ import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import org.jetbrains.annotations.NotNull;
 
 public class ChemicalPonderRender implements ScreenElement {
-    private final ChemicalStack stack;
+    private final ChemicalStack<?> stack;
     private final TextureAtlasSprite sprite;
 
-    public ChemicalPonderRender(ChemicalStack stack) {
+    public ChemicalPonderRender(ChemicalStack<?> stack) {
         this.stack = stack;
         //this.sprite = MekanismRenderer.getChemicalTexture(stack.getChemical()); // Requires newer version of mek
         this.sprite = MekanismRenderer.getSprite(stack.getType().getIcon());

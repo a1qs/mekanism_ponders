@@ -46,10 +46,10 @@ public class DynamicTankScenes {
 
         scene.idle(50);
 
-        scene.world().replaceBlocks(util.select().fromTo(1, 2, 2, 1, 3, 3), GeneratorsBlocks.REACTOR_GLASS.defaultState(), true);
+        scene.world().replaceBlocks(util.select().fromTo(1, 2, 2, 1, 3, 3), GeneratorsBlocks.REACTOR_GLASS.getBlock().defaultBlockState(), true);
         scene.idle(10);
-        scene.world().setBlock(util.grid().at(2, 2, 1), MekanismBlocks.DYNAMIC_VALVE.defaultState(), true);
-        scene.world().setBlock(util.grid().at(3, 4, 3), MekanismBlocks.DYNAMIC_VALVE.defaultState(), true);
+        scene.world().setBlock(util.grid().at(2, 2, 1), MekanismBlocks.DYNAMIC_VALVE.getBlock().defaultBlockState(), true);
+        scene.world().setBlock(util.grid().at(3, 4, 3), MekanismBlocks.DYNAMIC_VALVE.getBlock().defaultBlockState(), true);
 
         scene.idle(90);
 
@@ -114,7 +114,7 @@ public class DynamicTankScenes {
 
         scene.idle(135);
 
-        scene.world().setBlock(util.grid().at(2, 2, 0), MekanismBlocks.ULTIMATE_MECHANICAL_PIPE.defaultState(), true);
+        scene.world().setBlock(util.grid().at(2, 2, 0), MekanismBlocks.ULTIMATE_MECHANICAL_PIPE.getBlock().defaultBlockState(), true);
 
         scene.overlay().showText(100)
                 .text("Simply connect a transmitter of your choosing to the valve.");

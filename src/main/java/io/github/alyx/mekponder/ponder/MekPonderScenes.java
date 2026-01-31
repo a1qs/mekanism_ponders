@@ -6,9 +6,9 @@ import io.github.alyx.mekponder.ponder.generators.MekGensPonderScenes;
 import io.github.alyx.mekponder.ponder.scenes.*;
 import mekanism.common.registries.MekanismBlocks;
 import net.createmod.ponder.api.registration.PonderSceneRegistrationHelper;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
+import net.minecraftforge.registries.ForgeRegistries;
 
 public class MekPonderScenes {
 
@@ -19,7 +19,7 @@ public class MekPonderScenes {
     public static final ResourceLocation CREATING_THERMOELECTIC_BOILER = MekanismPonders.id("creating_thermoelectric_boiler");
 
     public static void register(PonderSceneRegistrationHelper<ResourceLocation> helper) {
-        PonderSceneRegistrationHelper<Item> HELPER = helper.withKeyFunction(BuiltInRegistries.ITEM::getKey);
+        PonderSceneRegistrationHelper<Item> HELPER = helper.withKeyFunction(ForgeRegistries.ITEMS::getKey);
 
         HELPER.forComponents(
                 MekanismBlocks.DYNAMIC_TANK.asItem(),

@@ -3,10 +3,10 @@ package io.github.alyx.mekponder.ponder.scenes;
 import io.github.alyx.mekponder.ponder.MekPonderScenes;
 import io.github.alyx.mekponder.ponder.element.ChemicalPonderRender;
 import io.github.alyx.mekponder.util.SceneUtil;
-import mekanism.api.chemical.ChemicalStack;
+import mekanism.api.chemical.gas.GasStack;
 import mekanism.common.block.attribute.AttributeStateBoilerValveMode;
 import mekanism.common.registries.MekanismBlocks;
-import mekanism.common.registries.MekanismChemicals;
+import mekanism.common.registries.MekanismGases;
 import mekanism.common.registries.MekanismItems;
 import net.createmod.catnip.math.Pointing;
 import net.createmod.ponder.api.PonderPalette;
@@ -113,11 +113,11 @@ public class ThermoelectricBoilerScenes {
 
 
 
-        scene.world().replaceBlocks(innerSections, MekanismBlocks.STRUCTURAL_GLASS.defaultState(), true);
+        scene.world().replaceBlocks(innerSections, MekanismBlocks.STRUCTURAL_GLASS.getBlock().defaultBlockState(), true);
         scene.idle(20);
         scene.world().replaceBlocks(
                 util.select().position(6, 9, 2).add(util.select().position(6, 9, 4)).add(util.select().position(6, 9, 6)),
-                MekanismBlocks.BOILER_VALVE.defaultState(),
+                MekanismBlocks.BOILER_VALVE.getBlock().defaultBlockState(),
                 true
         );
 
@@ -142,7 +142,7 @@ public class ThermoelectricBoilerScenes {
 
         scene.idle(20);
 
-        scene.world().setBlocks(superheatingElements, MekanismBlocks.SUPERHEATING_ELEMENT.defaultState(), true);
+        scene.world().setBlocks(superheatingElements, MekanismBlocks.SUPERHEATING_ELEMENT.getBlock().defaultBlockState(), true);
         scene.world().showSection(superheatingElements, Direction.DOWN);
 
         scene.idle(50);
@@ -156,7 +156,7 @@ public class ThermoelectricBoilerScenes {
         scene.overlay().showOutline(PonderPalette.BLUE, new Object(), pressureDispersers, 60);
 
         scene.idle(20);
-        scene.world().setBlocks(pressureDispersers, MekanismBlocks.PRESSURE_DISPERSER.defaultState(), true);
+        scene.world().setBlocks(pressureDispersers, MekanismBlocks.PRESSURE_DISPERSER.getBlock().defaultBlockState(), true);
         scene.world().showSection(pressureDispersers, Direction.DOWN);
 
         scene.idle(50);
@@ -227,7 +227,7 @@ public class ThermoelectricBoilerScenes {
         scene.idle(20);
 
         scene.overlay().showControls(util.vector().centerOf(6, 10, 2), Pointing.RIGHT, 50)
-                .showing(new ChemicalPonderRender(new ChemicalStack(MekanismChemicals.SUPERHEATED_SODIUM, 1000)));
+                .showing(new ChemicalPonderRender(new GasStack(MekanismGases.SUPERHEATED_SODIUM, 1000)));
 
 
         scene.idle(90);
@@ -242,7 +242,7 @@ public class ThermoelectricBoilerScenes {
         scene.idle(20);
 
         scene.overlay().showControls(util.vector().centerOf(6, 10, 4), Pointing.RIGHT, 50)
-                .showing(new ChemicalPonderRender(new ChemicalStack(MekanismChemicals.STEAM, 1000)));
+                .showing(new ChemicalPonderRender(new GasStack(MekanismGases.STEAM, 1000)));
 
         scene.idle(90);
 
@@ -256,7 +256,7 @@ public class ThermoelectricBoilerScenes {
         scene.idle(20);
 
         scene.overlay().showControls(util.vector().centerOf(6, 10, 6), Pointing.RIGHT, 50)
-                .showing(new ChemicalPonderRender(new ChemicalStack(MekanismChemicals.SODIUM, 1000)));
+                .showing(new ChemicalPonderRender(new GasStack(MekanismGases.SODIUM, 1000)));
 
         scene.idle(90);
     }

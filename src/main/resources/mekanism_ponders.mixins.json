@@ -1,7 +1,8 @@
 {
   "required": true,
   "package": "io.github.alyx.mekponder.mixin",
-  "compatibilityLevel": "JAVA_21",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "mekanism_ponders.mixins.refmap.json",
   "mixins": [
     "AccessorAttributeStateActive",
     "AccessorPonderScene",
@@ -13,14 +14,7 @@
     "MixinRenderResizableCuboid",
     "MixinRenderSPS"
   ],
-  "injectors": {
-    "defaultRequire": 1
-  },
-  "overwrites": {
-    "requireAnnotations": true
-  },
   "client": [
-    "AccessorMinecraft",
     "InvokerPonderUI"
   ]
 }

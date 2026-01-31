@@ -5,13 +5,14 @@ import io.github.alyx.mekponder.mixin.AccessorAttributeStateActive;
 import io.github.alyx.mekponder.ponder.element.ChemicalPonderRender;
 import io.github.alyx.mekponder.ponder.generators.MekGensPonderScenes;
 import io.github.alyx.mekponder.util.SceneUtil;
-import mekanism.api.chemical.ChemicalStack;
+
+import mekanism.api.chemical.gas.GasStack;
 import mekanism.common.block.attribute.AttributeStateActive;
 import mekanism.common.block.attribute.Attributes;
 import mekanism.common.particle.LaserParticleData;
 import mekanism.common.registries.MekanismItems;
 import mekanism.generators.common.registries.GeneratorsBlocks;
-import mekanism.generators.common.registries.GeneratorsChemicals;
+import mekanism.generators.common.registries.GeneratorsGases;
 import mekanism.generators.common.registries.GeneratorsItems;
 import mekanism.generators.common.tile.fusion.TileEntityFusionReactorController;
 import net.createmod.catnip.math.Pointing;
@@ -80,12 +81,12 @@ public class FusionReactorScenes {
 
         scene.idle(10);
 
-        scene.world().setBlock(util.grid().at(2, 3, 1), GeneratorsBlocks.FUSION_REACTOR_PORT.defaultState(), true);
-        scene.world().setBlock(util.grid().at(4, 3, 1), GeneratorsBlocks.FUSION_REACTOR_PORT.defaultState(), true);
+        scene.world().setBlock(util.grid().at(2, 3, 1), GeneratorsBlocks.FUSION_REACTOR_PORT.getBlock().defaultBlockState(), true);
+        scene.world().setBlock(util.grid().at(4, 3, 1), GeneratorsBlocks.FUSION_REACTOR_PORT.getBlock().defaultBlockState(), true);
         scene.idle(5);
-        scene.world().setBlock(util.grid().at(3, 2, 1), GeneratorsBlocks.REACTOR_GLASS.defaultState(), true);
-        scene.world().setBlock(util.grid().at(3, 3, 1), GeneratorsBlocks.REACTOR_GLASS.defaultState(), true);
-        scene.world().setBlock(util.grid().at(3, 4, 1), GeneratorsBlocks.REACTOR_GLASS.defaultState(), true);
+        scene.world().setBlock(util.grid().at(3, 2, 1), GeneratorsBlocks.REACTOR_GLASS.getBlock().defaultBlockState(), true);
+        scene.world().setBlock(util.grid().at(3, 3, 1), GeneratorsBlocks.REACTOR_GLASS.getBlock().defaultBlockState(), true);
+        scene.world().setBlock(util.grid().at(3, 4, 1), GeneratorsBlocks.REACTOR_GLASS.getBlock().defaultBlockState(), true);
 
         // Replacing with Ports 2
         scene.idle(20);
@@ -97,17 +98,17 @@ public class FusionReactorScenes {
 
         scene.idle(5);
 
-        scene.world().setBlock(util.grid().at(1, 3, 2), GeneratorsBlocks.FUSION_REACTOR_PORT.defaultState(), true);
-        scene.world().setBlock(util.grid().at(1, 3, 4), GeneratorsBlocks.FUSION_REACTOR_LOGIC_ADAPTER.defaultState(), true);
+        scene.world().setBlock(util.grid().at(1, 3, 2), GeneratorsBlocks.FUSION_REACTOR_PORT.getBlock().defaultBlockState(), true);
+        scene.world().setBlock(util.grid().at(1, 3, 4), GeneratorsBlocks.FUSION_REACTOR_LOGIC_ADAPTER.getBlock().defaultBlockState(), true);
         scene.idle(5);
-        scene.world().setBlock(util.grid().at(1, 2, 3), GeneratorsBlocks.REACTOR_GLASS.defaultState(), true);
-        scene.world().setBlock(util.grid().at(1, 3, 3), GeneratorsBlocks.LASER_FOCUS_MATRIX.defaultState(), true);
-        scene.world().setBlock(util.grid().at(1, 4, 3), GeneratorsBlocks.REACTOR_GLASS.defaultState(), true);
+        scene.world().setBlock(util.grid().at(1, 2, 3), GeneratorsBlocks.REACTOR_GLASS.getBlock().defaultBlockState(), true);
+        scene.world().setBlock(util.grid().at(1, 3, 3), GeneratorsBlocks.LASER_FOCUS_MATRIX.getBlock().defaultBlockState(), true);
+        scene.world().setBlock(util.grid().at(1, 4, 3), GeneratorsBlocks.REACTOR_GLASS.getBlock().defaultBlockState(), true);
 
 
 
         // Placing Controller
-        BlockState reactorBlockState = GeneratorsBlocks.FUSION_REACTOR_CONTROLLER.defaultState();
+        BlockState reactorBlockState = GeneratorsBlocks.FUSION_REACTOR_CONTROLLER.getBlock().defaultBlockState();
         reactorBlockState = ((AttributeStateActive) Attributes.ACTIVE).setActive(reactorBlockState, true); // why
 
         scene.idle(100);
@@ -333,10 +334,10 @@ public class FusionReactorScenes {
         scene.idle(90);
 
         scene.overlay().showControls(util.vector().centerOf(4, 3, 0), Pointing.UP, 60)
-                .showing(new ChemicalPonderRender(new ChemicalStack(GeneratorsChemicals.DEUTERIUM, 1000)));
+                .showing(new ChemicalPonderRender(new GasStack(GeneratorsGases.DEUTERIUM, 1000)));
 
         scene.overlay().showControls(util.vector().centerOf(2, 3, 0), Pointing.UP, 60)
-                .showing(new ChemicalPonderRender(new ChemicalStack(GeneratorsChemicals.TRITIUM, 1000)));
+                .showing(new ChemicalPonderRender(new GasStack(GeneratorsGases.TRITIUM, 1000)));
 
         scene.idle(75);
         scene.world().hideSection(util.select().position(2, 3, 0).add(util.select().position(4, 3, 0)), Direction.UP);
@@ -348,15 +349,15 @@ public class FusionReactorScenes {
                 .text("2.\nBy mixing §cDeuterium§r and §aTritium§r together, §5D-T Fuel§r is created.\n\nWith §5D-T Fuel§r, the Reactor can reach a maximum Injection rate of §61000§rmB/t in total.\nRequiring §6500§rmb/t of both chemicals seperately.");
 
         scene.idle(210);
-        scene.world().replaceBlocks(util.select().position(4, 3, 1).add(util.select().position(2, 3, 1)), GeneratorsBlocks.REACTOR_GLASS.defaultState(), true);
+        scene.world().replaceBlocks(util.select().position(4, 3, 1).add(util.select().position(2, 3, 1)), GeneratorsBlocks.REACTOR_GLASS.getBlock().defaultBlockState(), true);
         scene.idle(5);
-        scene.world().setBlock(util.grid().at(3, 3 ,1), GeneratorsBlocks.FUSION_REACTOR_PORT.defaultState(), true);
+        scene.world().setBlock(util.grid().at(3, 3 ,1), GeneratorsBlocks.FUSION_REACTOR_PORT.getBlock().defaultBlockState(), true);
         scene.idle(5);
         scene.world().showSection(util.select().position(3, 3, 0), Direction.UP);
 
         scene.idle(50);
         scene.overlay().showControls(util.vector().centerOf(3, 3, 0), Pointing.UP, 60)
-                .showing(new ChemicalPonderRender(new ChemicalStack(GeneratorsChemicals.FUSION_FUEL, 1000)));
+                .showing(new ChemicalPonderRender(new GasStack(GeneratorsGases.FUSION_FUEL, 1000)));
 
         scene.idle(60);
 

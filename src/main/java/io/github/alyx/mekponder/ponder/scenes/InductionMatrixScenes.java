@@ -94,12 +94,12 @@ public class InductionMatrixScenes {
         scene.overlay().showOutline(PonderPalette.BLUE, new Object(), inner, 130);
         scene.idle(140);
 
-        scene.world().replaceBlocks(util.select().fromTo(2, 2, 1, 4, 4, 1).add(util.select().fromTo(1, 2, 2, 1, 4, 4)), MekanismBlocks.STRUCTURAL_GLASS.defaultState(), true);
+        scene.world().replaceBlocks(util.select().fromTo(2, 2, 1, 4, 4, 1).add(util.select().fromTo(1, 2, 2, 1, 4, 4)), MekanismBlocks.STRUCTURAL_GLASS.getBlock().defaultBlockState(), true);
         scene.idle(10);
-        scene.world().replaceBlocks(util.select().fromTo(2, 5, 2, 4, 5, 4), GeneratorsBlocks.REACTOR_GLASS.defaultState(), true);
+        scene.world().replaceBlocks(util.select().fromTo(2, 5, 2, 4, 5, 4), GeneratorsBlocks.REACTOR_GLASS.getBlock().defaultBlockState(), true);
         scene.idle(10);
-        scene.world().setBlock(util.grid().at(2, 2, 1), MekanismBlocks.INDUCTION_PORT.defaultState(), true);
-        scene.world().setBlock(util.grid().at(4, 2, 1), MekanismBlocks.INDUCTION_PORT.defaultState(), true);
+        scene.world().setBlock(util.grid().at(2, 2, 1), MekanismBlocks.INDUCTION_PORT.getBlock().defaultBlockState(), true);
+        scene.world().setBlock(util.grid().at(4, 2, 1), MekanismBlocks.INDUCTION_PORT.getBlock().defaultBlockState(), true);
 
         scene.idle(35);
 
@@ -119,8 +119,8 @@ public class InductionMatrixScenes {
         scene.overlay().showText(100)
                         .text("For the Induction Matrix to store power, it requires an Induction Cell of any tier.");
 
-        scene.world().setBlocks(util.select().fromTo(2, 2, 4, 2, 4, 4), MekanismBlocks.BASIC_INDUCTION_CELL.defaultState(), true);
-        scene.world().setBlocks(util.select().fromTo(2, 2, 2, 2, 4, 2), MekanismBlocks.BASIC_INDUCTION_PROVIDER.defaultState(), true);
+        scene.world().setBlocks(util.select().fromTo(2, 2, 4, 2, 4, 4), MekanismBlocks.BASIC_INDUCTION_CELL.getBlock().defaultBlockState(), true);
+        scene.world().setBlocks(util.select().fromTo(2, 2, 2, 2, 4, 2), MekanismBlocks.BASIC_INDUCTION_PROVIDER.getBlock().defaultBlockState(), true);
 
         scene.idle(80);
 
@@ -212,7 +212,7 @@ public class InductionMatrixScenes {
         if (MekanismPonders.isMekGensLoaded) {
             MiscGeneratorScenes.heatGeneratorInductionMatrix(scene, util);
         } else {
-            scene.world().setBlock(util.grid().at(4, 2, 0), MekanismBlocks.BASIC_ENERGY_CUBE.defaultState(), false);
+            scene.world().setBlock(util.grid().at(4, 2, 0), MekanismBlocks.BASIC_ENERGY_CUBE.getBlock().defaultBlockState(), false);
             scene.world().showSection(util.select().position(4, 2, 0), Direction.UP);
             scene.idle(20);
         }

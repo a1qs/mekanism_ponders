@@ -5,7 +5,7 @@ import io.github.alyx.mekponder.ponder.MekPonderScenes;
 import io.github.alyx.mekponder.ponder.generators.MekGensPonderScenes;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
-import net.neoforged.neoforge.common.data.LanguageProvider;
+import net.minecraftforge.common.data.LanguageProvider;
 
 public class MekPonderLanguageProvider extends LanguageProvider {
     public MekPonderLanguageProvider(PackOutput output) {

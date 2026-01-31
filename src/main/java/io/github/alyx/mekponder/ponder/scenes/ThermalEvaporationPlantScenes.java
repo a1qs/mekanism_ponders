@@ -24,7 +24,7 @@ public class ThermalEvaporationPlantScenes {
 
 
 
-        scene.world().setBlock(util.grid().at(2, 2, 1), MekanismBlocks.THERMAL_EVAPORATION_BLOCK.defaultState(), false);
+        scene.world().setBlock(util.grid().at(2, 2, 1), MekanismBlocks.THERMAL_EVAPORATION_BLOCK.getBlock().defaultBlockState(), false);
 
         scene.idle(10);
         scene.rotateCameraY(-30);
@@ -67,9 +67,9 @@ public class ThermalEvaporationPlantScenes {
                 .text("Inner sections of the Multiblock can be replaced with §6Thermal§r §6Evaporation Valves§r and §6Structural§r §6Glass§r.");
 
         scene.idle(100);
-        scene.world().setBlock(util.grid().at(1, 2, 3), MekanismBlocks.STRUCTURAL_GLASS.defaultState(), true);
+        scene.world().setBlock(util.grid().at(1, 2, 3), MekanismBlocks.STRUCTURAL_GLASS.getBlock().defaultBlockState(), true);
         scene.idle(10);
-        scene.world().replaceBlocks(util.select().fromTo(3, 2, 1, 2, 2, 1), MekanismBlocks.THERMAL_EVAPORATION_VALVE.defaultState(), true);
+        scene.world().replaceBlocks(util.select().fromTo(3, 2, 1, 2, 2, 1), MekanismBlocks.THERMAL_EVAPORATION_VALVE.getBlock().defaultBlockState(), true);
 
         scene.idle(30);
         scene.overlay().showText(120)
@@ -106,7 +106,7 @@ public class ThermalEvaporationPlantScenes {
 
         scene.idle(120);
 
-        scene.world().setBlocks(moreTEP, MekanismBlocks.THERMAL_EVAPORATION_BLOCK.defaultState(), false);
+        scene.world().setBlocks(moreTEP, MekanismBlocks.THERMAL_EVAPORATION_BLOCK.getBlock().defaultBlockState(), false);
         scene.overlay().showText(140)
                 .text("The §6higher§r the Multiblock, the larger the §6capacity of internal§r §6tanks§r and §6maximum processing§r §6speed§r.\nIn addition to that, the heat required also rises.");
 
