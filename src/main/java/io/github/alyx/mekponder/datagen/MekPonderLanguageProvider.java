@@ -43,7 +43,7 @@ public class MekPonderLanguageProvider extends LanguageProvider {
                 "Logic Adapter is set to Insufficient Fuel.\n\nA Redstone signal is being outputted.",
                 "The Fission Reactor has an UI that can be accessed by clicking anywhere on its completed structure.",
                 "Within the main tab, you can see:\n- its Status\n- its current configured Burn Rate\n- the Heating Rate\n- the current Temperature\n- and the Damage percentage it has sustained.",
-                "In addition to that, it has a buttons to activate and deactivate the reactor.",
+                "In addition to that, it has a button to activate and deactivate the reactor.",
                 "In the Fission Reactor Statistics tab, you can see:\n- Heat Statistic\n- Fuel Statistics\n- as well as being able to set the Current Burn Rate."
         );
 
