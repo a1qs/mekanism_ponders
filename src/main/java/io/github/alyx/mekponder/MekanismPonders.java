@@ -1,10 +1,15 @@
 package io.github.alyx.mekponder;
 
 import com.mojang.logging.LogUtils;
+import io.github.alyx.mekponder.ponder.MekPonderPlugin;
+import net.createmod.ponder.foundation.PonderIndex;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import org.slf4j.Logger;
 
 
@@ -23,5 +28,13 @@ public class MekanismPonders {
 
     public static ResourceLocation id(String name) {
         return new ResourceLocation(MODID, name);
+    }
+
+    @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    public static class Client {
+        @SubscribeEvent
+        static void onClientSetup(FMLClientSetupEvent event) {
+            PonderIndex.addPlugin(new MekPonderPlugin());
+        }
     }
 }
