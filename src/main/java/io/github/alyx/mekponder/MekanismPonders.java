@@ -14,7 +14,6 @@ import org.slf4j.Logger;
 
 
 // TODO: Figure out Energy Cube and transmitter logic
-// TODO: fix scaling with boiler with gui sizes
 @Mod(MekanismPonders.MODID)
 public class MekanismPonders {
     public static final String MODID = "mekanism_ponders";
