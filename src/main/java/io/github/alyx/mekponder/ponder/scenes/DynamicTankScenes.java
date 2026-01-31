@@ -2,6 +2,7 @@ package io.github.alyx.mekponder.ponder.scenes;
 
 import io.github.alyx.mekponder.ponder.MekPonderScenes;
 import io.github.alyx.mekponder.util.SceneUtil;
+import mekanism.common.Mekanism;
 import mekanism.common.registries.MekanismBlocks;
 import mekanism.generators.common.registries.GeneratorsBlocks;
 import net.createmod.catnip.math.Pointing;
@@ -46,7 +47,7 @@ public class DynamicTankScenes {
 
         scene.idle(50);
 
-        scene.world().replaceBlocks(util.select().fromTo(1, 2, 2, 1, 3, 3), GeneratorsBlocks.REACTOR_GLASS.defaultState(), true);
+        scene.world().replaceBlocks(util.select().fromTo(1, 2, 2, 1, 3, 3), MekanismBlocks.STRUCTURAL_GLASS.defaultState(), true);
         scene.idle(10);
         scene.world().setBlock(util.grid().at(2, 2, 1), MekanismBlocks.DYNAMIC_VALVE.defaultState(), true);
         scene.world().setBlock(util.grid().at(3, 4, 3), MekanismBlocks.DYNAMIC_VALVE.defaultState(), true);
