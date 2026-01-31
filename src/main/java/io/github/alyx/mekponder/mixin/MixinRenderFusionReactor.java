@@ -37,7 +37,7 @@ public abstract class MixinRenderFusionReactor {
             }
 
             long scaledTemp = Math.round(15_000_000_00 / SCALE);
-            float ticks = (float) PonderUI.ponderTicks / 2 + partialTicks; // TODO: CHeck if this still works like it should
+            float ticks = (float) PonderUI.ponderTicks / 2 + partialTicks;
             VertexConsumer buffer = renderer.getBuffer(core.RENDER_TYPE);
             matrix.pushPose();
             matrix.translate(0.5, -1.5, 0.5);
