@@ -178,7 +178,7 @@ public class SupercriticalPhaseShifterScenes {
 
         scene.idle(10);
 
-        SceneUtil.loopBlockProperty(scene, util.grid().at(3, 2, 1), ((AccessorAttributeStateActive) Attributes.ACTIVE).mekanism_ponder$getActiveProperty(), 3, 12);
+        SceneUtil.loopBlockProperty(scene, util.grid().at(3, 2, 1), AccessorAttributeStateActive.mekanism_ponder$getActiveProperty(), 3, 12);
 
         scene.idle(20);
 

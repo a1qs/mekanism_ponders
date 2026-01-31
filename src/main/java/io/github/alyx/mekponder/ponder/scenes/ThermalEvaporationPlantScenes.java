@@ -98,7 +98,7 @@ public class ThermalEvaporationPlantScenes {
 
         scene.idle(15);
 
-        scene.world().cycleBlockProperty(util.grid().at(3, 2, 0), ((AccessorAttributeStateActive) Attributes.ACTIVE).mekanism_ponder$getActiveProperty());
+        scene.world().cycleBlockProperty(util.grid().at(3, 2, 0),AccessorAttributeStateActive.mekanism_ponder$getActiveProperty());
 
         scene.overlay().showText(100)
                 .pointAt(util.vector().of(3.5, 2.5, 0.5))

@@ -2,7 +2,7 @@
   "required": true,
   "package": "io.github.alyx.mekponder.mixin",
   "compatibilityLevel": "JAVA_17",
-  "refmap": "mekanism_ponders.mixins.refmap.json",
+  "refmap": "mekanism_ponders.refmap.json",
   "mixins": [
     "AccessorAttributeStateActive",
     "AccessorPonderScene",

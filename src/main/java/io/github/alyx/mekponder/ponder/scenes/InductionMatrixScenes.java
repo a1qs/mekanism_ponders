@@ -201,7 +201,7 @@ public class InductionMatrixScenes {
                 .withItem(new ItemStack(MekanismItems.CONFIGURATOR.asItem(), 1));
 
         scene.idle(40);
-        SceneUtil.loopBlockProperty(scene, util.grid().at(2, 2, 1), ((AccessorAttributeStateActive) Attributes.ACTIVE).mekanism_ponder$getActiveProperty(), 3, 12);
+        SceneUtil.loopBlockProperty(scene, util.grid().at(2, 2, 1), AccessorAttributeStateActive.mekanism_ponder$getActiveProperty(), 3, 12);
 
         scene.idle(30);
         scene.overlay().showOutlineWithText(util.select().position(4, 2, 1), 80)

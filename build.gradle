@@ -15,6 +15,7 @@ base {
 }
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+jarJar.enable()
 println "Java: ${System.getProperty 'java.version'}, JVM: ${System.getProperty 'java.vm.version'} (${System.getProperty 'java.vendor'}), Arch: ${System.getProperty 'os.arch'}"
 minecraft {
     mappings channel: mapping_channel, version: mapping_version
@@ -71,6 +72,7 @@ repositories {
 
 mixin {
     add sourceSets.main, "${mod_id}.refmap.json"
+    config 'mekanism_ponders.mixins.json'
 }
 
 dependencies {
@@ -105,8 +107,8 @@ dependencies {
     runtimeOnly fg.deobf("dev.engine-room.flywheel:flywheel-forge-${minecraft_version}:${flywheel_version}")
     runtimeOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}")
 
-    jarJar("net.createmod.ponder:Ponder-Forge-${minecraft_version}:${ponder_version}")
-    jarJar("dev.engine-room.flywheel:flywheel-forge-${minecraft_version}:${flywheel_version}")
+    jarJar(group: "net.createmod.ponder", name: "Ponder-Forge-${minecraft_version}", version: "${ponder_version_range}")
+    jarJar(group: "net.createmod.ponder", name: "Ponder-Forge-${minecraft_version}", version: "${flywheel_version_range}")
 }
 
 tasks.named('processResources', ProcessResources).configure {
@@ -142,6 +144,12 @@ tasks.named('jar', Jar).configure {
     // This is the preferred method to reobfuscate your jar file
     finalizedBy 'reobfJar'
 }
+tasks.named('jarJar') {
+    archiveClassifier = ""
+    finalizedBy 'reobfJarJar'
+}
+
+
 
 // However if you are in a multi-project build, dev time needs unobfed jar files, so you can delay the obfuscation until publishing by doing:
 // tasks.named('publish').configure {
@@ -160,6 +168,10 @@ publishing {
             url "file://${project.projectDir}/mcmodsrepo"
         }
     }
+}
+
+afterEvaluate {
+    reobfJarJar.dependsOn 'addMixinsToJarJar'
 }
 
 tasks.withType(JavaCompile).configureEach {

@@ -52,7 +52,7 @@ public class MiscGeneratorScenes {
         scene.world().showSection(util.select().position(4, 2, 0), Direction.UP);
 
         scene.idle(30);
-        scene.world().cycleBlockProperty(util.grid().at(4, 2, 0), ((AccessorAttributeStateActive) Attributes.ACTIVE).mekanism_ponder$getActiveProperty());
+        scene.world().cycleBlockProperty(util.grid().at(4, 2, 0), AccessorAttributeStateActive.mekanism_ponder$getActiveProperty());
         scene.idle(20);
     }
 }

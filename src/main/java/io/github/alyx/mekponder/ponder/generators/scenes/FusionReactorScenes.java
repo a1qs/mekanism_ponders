@@ -176,7 +176,7 @@ public class FusionReactorScenes {
                 .withItem(new ItemStack(MekanismItems.CONFIGURATOR.asItem(), 1));
         scene.idle(40);
 
-        SceneUtil.loopBlockProperty(scene, util.grid().at(1, 3, 2), ((AccessorAttributeStateActive) Attributes.ACTIVE).mekanism_ponder$getActiveProperty(), 3, 12);
+        SceneUtil.loopBlockProperty(scene, util.grid().at(1, 3, 2), AccessorAttributeStateActive.mekanism_ponder$getActiveProperty(), 3, 12);
 
         scene.idle(30);
 
