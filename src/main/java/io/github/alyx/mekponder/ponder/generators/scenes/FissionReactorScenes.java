@@ -344,7 +344,7 @@ public class FissionReactorScenes {
         scene.idle(325);
         scene.overlay().showText(240)
                 .colored(PonderPalette.OUTPUT)
-                .text("This method uses 200.000mB/t of Sodium per mB of Burn Rate, however provides double the cooling capacity that Water provides\n\n This allows the reactor able to handle double the Burn Rate it could with Water.");
+                .text("This method uses 200.000mB/t of Sodium per mB of Burn Rate, however provides double the cooling capacity that Water provides\n\nThis allows the reactor able to handle double the Burn Rate it could with Water.");
 
         scene.idle(230);
 

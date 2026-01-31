@@ -54,7 +54,7 @@ public class MekPonderLanguageProvider extends LanguageProvider {
                 "The Fission Reactor can be cooled in two ways.",
                 "1. Water cooling\n\nWater cooling the reactor produces steam. The reactor uses 20,000mB/t of Water per mB of Burn Rate.\n\nSteam can be used in a Turbine to gain energy, and can also be used to recycle the steam back into Water using Saturating Condensers.",
                 "2. Sodium cooling\n\nSodium cooling the reactor produces Superheated Sodium.\nSuperheated Sodium can be used create Steam in a Thermoelectric Boiler, as well returning the heated Sodium to a cooled state, where it can be used as a coolant again.",
-                "This method uses 200.000mB/t of Sodium per mB of Burn Rate, however provides double the cooling capacity that Water provides\n\n This allows the reactor able to handle double the Burn Rate it could with Water."
+                "This method uses 200.000mB/t of Sodium per mB of Burn Rate, however provides double the cooling capacity that Water provides\n\nThis allows the reactor able to handle double the Burn Rate it could with Water."
         );
 
         addPonderTranslation(
