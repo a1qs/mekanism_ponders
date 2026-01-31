@@ -274,7 +274,7 @@ public class FissionReactorScenes {
         scene.idle(200);
 
         scene.overlay().showText(80)
-                .text("In addition to that, it has a buttons to activate and deactivate the reactor.");
+                .text("In addition to that, it has a button to activate and deactivate the reactor.");
 
         scene.idle(100);
 
