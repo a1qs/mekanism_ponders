@@ -46,7 +46,7 @@ public class DynamicTankScenes {
 
         scene.idle(50);
 
-        scene.world().replaceBlocks(util.select().fromTo(1, 2, 2, 1, 3, 3), GeneratorsBlocks.REACTOR_GLASS.getBlock().defaultBlockState(), true);
+        scene.world().replaceBlocks(util.select().fromTo(1, 2, 2, 1, 3, 3), MekanismBlocks.STRUCTURAL_GLASS.getBlock().defaultBlockState(), true);
         scene.idle(10);
         scene.world().setBlock(util.grid().at(2, 2, 1), MekanismBlocks.DYNAMIC_VALVE.getBlock().defaultBlockState(), true);
         scene.world().setBlock(util.grid().at(3, 4, 3), MekanismBlocks.DYNAMIC_VALVE.getBlock().defaultBlockState(), true);
