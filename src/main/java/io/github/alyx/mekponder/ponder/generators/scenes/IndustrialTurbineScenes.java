@@ -1,6 +1,6 @@
 package io.github.alyx.mekponder.ponder.generators.scenes;
 
-import io.github.alyx.mekponder.ponder.element.ChemicalPonderRender;
+import io.github.alyx.mekponder.render.ChemicalPonderRender;
 import io.github.alyx.mekponder.ponder.generators.MekGensPonderScenes;
 import io.github.alyx.mekponder.util.SceneUtil;
 import mekanism.api.chemical.ChemicalStack;
