@@ -1,4 +1,4 @@
-package io.github.alyx.mekponder.render;
+package io.github.alyx.mekponder.ponder.element;
 
 import mekanism.client.gui.GuiUtils;
 import mekanism.client.render.MekanismRenderer;
