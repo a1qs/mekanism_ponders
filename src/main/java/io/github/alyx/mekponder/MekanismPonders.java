@@ -20,9 +20,14 @@ public class MekanismPonders {
     public static final Logger LOGGER = LogUtils.getLogger();
 
     public static boolean isMekGensLoaded = false;
+    public static boolean isMekEvolvedLoaded = false;
+    public static boolean isMekExtrasLoaded = false;
 
     public MekanismPonders() {
-        isMekGensLoaded = ModList.get().isLoaded("mekanismgenerators"); // We only want to add Ponders that include MekanismGenerators things if the mod is loaded.
+        // We only want to load certain ponders if the mod for the feature is actually loaded
+        isMekGensLoaded = ModList.get().isLoaded("mekanismgenerators");
+        isMekEvolvedLoaded = ModList.get().isLoaded("evolvedmekanism");
+        isMekExtrasLoaded = ModList.get().isLoaded("mekanism_extras");
     }
 
     public static ResourceLocation id(String name) {
