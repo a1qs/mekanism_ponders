@@ -102,6 +102,10 @@ dependencies {
 
     runtimeOnly("mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}")
 
+    implementation("curse.maven:evolved-mekanism-1230085:7599592") // ADDON: Mekanism: Evolved
+    implementation("curse.maven:mekanism-extras-1026040:7628313") // ADDON: Mekanism: Extras
+    implementation("curse.maven:iglee-library-541199:7000755") // ADDON: Mekanism: Extras
+
     jarJar("net.createmod.ponder:Ponder-NeoForge-${minecraft_version}:${ponder_version}")
     jarJar("dev.engine-room.flywheel:flywheel-neoforge-${minecraft_version}:${flywheel_version}")
 }
