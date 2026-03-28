@@ -2,10 +2,9 @@ package io.github.alyx.mekponder.ponder.scenes;
 
 import io.github.alyx.mekponder.mixin.AccessorAttributeStateActive;
 import io.github.alyx.mekponder.ponder.MekPonderScenes;
-import io.github.alyx.mekponder.ponder.element.ChemicalPonderRender;
+import io.github.alyx.mekponder.render.ChemicalPonderRender;
 import io.github.alyx.mekponder.util.SceneUtil;
 import mekanism.api.chemical.gas.GasStack;
-import mekanism.common.block.attribute.Attributes;
 import mekanism.common.registries.MekanismBlocks;
 import mekanism.common.registries.MekanismGases;
 import mekanism.common.registries.MekanismItems;
