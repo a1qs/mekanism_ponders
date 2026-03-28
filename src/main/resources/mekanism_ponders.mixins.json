@@ -11,7 +11,8 @@
     "MixinRenderFusionReactor",
     "MixinRenderIndustrialTurbine",
     "MixinRenderResizableCuboid",
-    "MixinRenderSPS"
+    "MixinRenderSPS",
+    "MixinRenderThermalEvaporationPlant"
   ],
   "injectors": {
     "defaultRequire": 1
