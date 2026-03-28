@@ -12,7 +12,8 @@
     "MixinRenderFusionReactor",
     "MixinRenderIndustrialTurbine",
     "MixinRenderResizableCuboid",
-    "MixinRenderSPS"
+    "MixinRenderSPS",
+    "MixinRenderThermalEvaporationPlant"
   ],
   "client": [
     "InvokerPonderUI"
