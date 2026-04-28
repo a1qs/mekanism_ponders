@@ -91,7 +91,7 @@ configurations {
 
 dependencies {
     implementation("curse.maven:jei-238222:7057366")
-    implementation("net.createmod.ponder:Ponder-NeoForge-${minecraft_version}:${ponder_version}")
+    implementation("net.createmod.ponder:ponder-neoforge:$ponder_version+mc$minecraft_version")
     implementation("mekanism:Mekanism:${mekanism_version}")            // Mekanism
     implementation("mekanism:Mekanism:${mekanism_version}:additions")  // Mekanism: Additions
     implementation("mekanism:Mekanism:${mekanism_version}:generators") // Mekanism: Generators
@@ -99,6 +99,7 @@ dependencies {
 
     compileOnly("mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}")
     compileOnly "mekanism:Mekanism:${mekanism_version}:api"
+    compileOnlyApi("dev.engine-room.flywheel:flywheel-neoforge-api-$minecraft_version:$flywheel_version")
 
     runtimeOnly("mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}")
 
@@ -106,8 +107,19 @@ dependencies {
     implementation("curse.maven:mekanism-extras-1026040:7628313") // ADDON: Mekanism: Extras
     implementation("curse.maven:iglee-library-541199:7000755") // ADDON: Mekanism: Extras
 
-    jarJar("net.createmod.ponder:Ponder-NeoForge-${minecraft_version}:${ponder_version}")
-    jarJar("dev.engine-room.flywheel:flywheel-neoforge-${minecraft_version}:${flywheel_version}")
+    jarJar(runtimeOnly("dev.engine-room.flywheel:flywheel-neoforge-$minecraft_version:$flywheel_version") {
+        version {
+            strictly "[${flywheel_version},2.0)"
+            prefer flywheel_version
+        }
+    })
+
+    jarJar(api("net.createmod.ponder:ponder-neoforge:$ponder_version+mc$minecraft_version") {
+        version {
+            prefer "$ponder_version+mc$minecraft_version"
+            strictly ponder_version_range
+        }
+    })
 }
 
 var generateModMetadata = tasks.register("generateModMetadata", ProcessResources) {
