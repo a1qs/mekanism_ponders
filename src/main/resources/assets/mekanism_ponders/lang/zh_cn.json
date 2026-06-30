@@ -145,7 +145,7 @@
   "mekanism_ponders.ponder.starting_fusion_reactor.text_2": "一旦达到点火温度，反应堆就会启动。\n\n这个温度可以通过使用 §l激光聚焦矩阵§r 来实现。",
   "mekanism_ponders.ponder.starting_fusion_reactor.text_3": "激光聚焦矩阵可以吸收激光束并提高反应堆的温度。",
   "mekanism_ponders.ponder.starting_fusion_reactor.text_4": "激光增幅器可以积累能量，并一次性释放所有能量，从而导致热量迅速增加。",
-  "mekanism_ponders.ponder.starting_fusion_reactor.text_5": "使用激光增幅器成功激活至少需要 §c400kFE§r 的能量才能达到所需的点火温度。",
+  "mekanism_ponders.ponder.starting_fusion_reactor.text_5": "使用激光增幅器成功激活至少需要 §c400MFE§r 的能量才能达到所需的点火温度。",
   "mekanism_ponders.ponder.starting_fusion_reactor.text_6": "通过将红石检测切换到“常规”模式，激光增幅器只会在接收到红石信号时才发射其积累的能量。",
   "mekanism_ponders.ponder.starting_fusion_reactor.text_7": "红石检测：常规",
   "mekanism_ponders.ponder.starting_fusion_reactor.text_8": "反应堆现在正在运行。"
